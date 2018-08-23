@@ -1,0 +1,14 @@
+automations_tab:
+  entities:
+  - group.home_apps
+  - group.hall_night_light
+  - group.basement_night_light
+  - group.system_automations
+  - group.porch_lights_minder
+  - group.automation_timeline
+  - group.security_automation
+  - group.nest_automations
+  - group.presence_automation
+  - group.all_automations
+  name: Automations
+  view: true

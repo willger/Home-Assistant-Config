@@ -1,0 +1,106 @@
+# Automation Tab
+Automations_Tab:
+  name: Automations
+  view: yes
+  icon: mdi:av-timer
+  entities:
+    - group.home_apps
+    - group.system_automations
+    - group.automation_timeline
+
+# Automation Groups
+
+system_automations:
+  name: 'System Automations'
+  entities:
+    - automation.ha_start
+    - automation.garage_door_power_toggle
+    - automation.history_purge
+
+porch_lights_minder:
+  name: 'Porch Lights Minder'
+  entities:
+    - automation.sunset_porch_lights
+    - automation.porch_lights_away_on
+    - automation.porch_lights_away_off
+
+outside_lights_minder:
+  name: 'Outside Lights Minder'
+  entities:
+    - automation.door_to_light_trigger
+    - automation.outside_nl_timer_done
+    - automation.driveway_motion
+    - timer.outside_nl_timer
+
+automation_timeline:
+  name: 'Automation Time Line'
+  entities:
+    - automation.5am_porch_lights
+    - automation.good_morning_lights
+    - automation.sunrise_porch_lights
+    - automation.sunset_porch_lights_minder
+    - automation.app_toggle_basement_night_light
+    - automation.app_toggle_hall_night_light
+
+nest_automations:
+  name: 'Nest Minder'
+  entities:
+    - automation.turn_on_nest_away_mode
+    - automation.turn_off_nest_away_mode
+
+security_automation:
+  entities:
+    - automation.security_away
+    - automation.arm_nightly_security
+    - automation.morning_disarm
+    - automation.security_home_disarm
+
+presence_automation:
+  entities:
+    - automation.someone_leaves_home
+    - automation.someone_returns_home
+    - automation.entered_work
+    - automation.left_work_notification
+
+home_apps:
+  name: 'Home Apps'
+  entities:
+    - group.hall_nl_app
+    - group.basement_nl_app
+    - group.porch_lights_minder
+    - group.outside_lights_minder
+    - group.nest_automations
+    - group.lamp_light_sync
+    - group.toggle_nl_card
+# Home Apps
+hall_nl_app:
+  name: 'Hall NL App'
+  entities:
+    - automation.hall_nl_motion_active
+    - automation.hall_nl_motion_inactive
+    - automation.hall_nl_timer_done
+    - timer.hall_nl_timer
+
+basement_nl_app:
+  name: 'Basement NL App'
+  entities:
+    - automation.basement_nl_motion_active
+    - automation.basement_nl_motion_inactive
+    - automation.basement_nl_timer_done
+    - timer.basement_nl_timer
+
+toggle_nl_card:
+  name: 'Toggle NL Card'
+  entities:
+    - automation.hide_nl_card_at_sunrise
+    - automation.show_nl_card_at_sunset
+
+lamp_light_sync:
+  name: 'Lamp Light Sync'
+  entities:
+    - automation.sync_simulated_to_osram_left
+    - automation.sync_simulated_to_osram_right
+    - automation.sync_OFF_simulated_to_osram_left
+    - automation.sync_OFF_simulated_to_osram_right
+    - automation.sync_lights_on
+    - automation.sync_lights_off

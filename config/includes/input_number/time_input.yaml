@@ -1,0 +1,12 @@
+wakeup_hr:
+  name: "wakeup hr"
+  initial: 04
+  min: 00 
+  max: 8 
+  step: 1
+wakeup_mn:
+  name: 'wakeup mn'
+  initial: 00
+  min: 00
+  max: 55
+  step: 5

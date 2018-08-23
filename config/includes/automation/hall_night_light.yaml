@@ -1,0 +1,74 @@
+# Turn NL app ON at 10:00PM & OFF at 5:00 AM
+- alias: 'App Toggle Hall Night Light'
+  trigger:
+    - platform: time
+      hours: '22'
+      minutes: '01'
+      seconds: '00'
+    - platform: time
+      hours: '03'
+      minutes: '59'
+      seconds: '00'
+  action:
+    service_template: >-
+      {%- if (now().strftime("%s") | int | timestamp_custom("%H")) >="22" -%}
+      homeassistant.turn_on
+      {%- else -%}
+      homeassistant.turn_off
+      {%- endif %}
+    entity_id: switch.hall_nl
+
+# Turning on the lights when motion, if timer is active reset
+- alias: 'Hall NL Motion active'
+  trigger:
+    - platform: state
+      entity_id:
+        - sensor.hall_motion
+        - sensor.kitchen_motion
+      from: 'inactive'
+      to: 'active'
+  condition:
+    condition: template
+    value_template: '{{ states.remote.living_room.state == "off" }}'
+  action:
+    - service: homeassistant.turn_on
+      entity_id:
+        - light.left_lamp
+        - light.right_lamp
+        - light.cabinet_lights
+    - condition: state
+      entity_id: timer.hall_nl_timer
+      state: active
+    - service: timer.cancel
+      entity_id: timer.hall_nl_timer
+
+# Start timer.hall_nl_timer when sensors are inactive
+- alias: 'Hall NL Motion inactive'
+  trigger:
+    - platform: state
+      entity_id: sensor.hall_motion
+      from: 'active'
+      to: 'inactive'
+  condition:
+    condition: template
+    value_template: '{{ states.remote.living_room.state == "off" }}'
+  action:
+    service: timer.start
+    entity_id: timer.hall_nl_timer
+
+# Turn off lights when timer is done
+- alias: 'Hall NL Timer Done'
+  trigger:
+    platform: event
+    event_type: timer.finished
+    event_data:
+      entity_id: timer.hall_nl_timer
+  condition:
+    condition: template
+    value_template: '{{ states.remote.living_room.state == "off" }}'
+  action:
+    service: homeassistant.turn_off
+    entity_id:
+      - light.left_lamp
+      - light.right_lamp
+      - light.cabinet_lights

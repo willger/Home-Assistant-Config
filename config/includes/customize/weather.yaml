@@ -1,0 +1,78 @@
+###################################
+##  Nest Section
+###################################
+#### Thermostat ####
+climate.upstairs:
+  friendly_name: 'Nest Upstairs'
+  hidden: false
+sensor.upstairs_thermostat_temperature:
+  friendly_name: 'Upstairs Temp'
+  hidden: false
+sensor.nest_upstairs:
+  icon: mdi:air-conditioner  
+  hidden: true
+sensor.upstairs_thermostat_humidity:  
+  friendly_name: 'Upstairs Humidity'
+  icon: mdi:water-percent
+sensor.upstairs_away_mode:
+  hidden: true
+sensor.upstairs_thermostat_target:
+  hidden: true
+sensor.upstairs_thermostat_operation_mode:
+  friendly_name: 'Nest Mode'
+  hidden: true
+
+
+#### Nest Protect ####
+sensor.upstairs_nest_protect_battery_health:
+  hidden: true
+sensor.upstairs_nest_protect_co_status:
+  hidden: true
+sensor.upstairs_nest_protect_smoke_status:
+  hidden: true
+
+
+#### Binary Sensors ####
+binary_sensor.upstairs_nest_protect_online:
+  hidden: true
+binary_sensor.upstairs_thermostat_fan:
+  hidden: true
+binary_sensor.upstairs_thermostat_has_leaf:
+  hidden: true
+binary_sensor.upstairs_thermostat_is_using_emergency_heat:
+  hidden: true
+binary_sensor.upstairs_thermostat_is_locked:
+  hidden: true
+binary_sensor.upstairs_thermostat_online:
+  hidden: true
+
+## PWS Sensors ####
+sensor.pws_alerts:
+  friendly_name: 'Weather Alerts'
+  icon: mdi:alert-outline
+sensor.pws_feelslike_f:
+  friendly_name: 'Temp Feels Like'
+  icon: mdi:weather-sunny
+sensor.pws_heat_index_f:
+  friendly_name: 'Heat Index'
+  icon: mdi:weather-sunny
+sensor.pws_precip_today_in:
+  friendly_name: 'Precip (rain)'
+  icon: mdi:scale
+sensor.pws_temp_f:
+  friendly_name: 'Outside Temp'
+  icon: mdi:thermometer-lines
+sensor.pws_weather:
+  friendly_name: 'Weather Conditions'
+  icon: mdi:weather-lightning-rainy
+sensor.pws_relative_humidity:
+  friendly_name: 'Relative Humidity'
+  icon: mdi:water-percent
+
+##  Sun Section
+sun.sun:
+  hidden: false
+
+group.all_devices:
+  hidden: true
+

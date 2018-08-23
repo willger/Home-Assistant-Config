@@ -1,0 +1,11 @@
+#alert.garage_door_alert:
+#  hidden: false
+#  icon: mdi:alert-octagram
+
+#alert.doors_group_alert:
+#  hidden: false
+#  icon: mdi:alert-octagram
+
+#group.home_alerts:
+#  hidden: false
+#  icon: mdi:alert-octagram

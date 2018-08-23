@@ -1,0 +1,62 @@
+## Motion Sensors
+sensor.hall_motion:
+  hidden: false
+  icon: mdi:walk
+sensor.entry_way_motion:
+  hidden: false
+  icon: mdi:walk
+sensor.basement_motion:
+  hidden: false
+  icon: mdi:walk
+sensor.kitchen_motion:
+  hidden: false
+  icon: mdi:walk
+
+## Battery Levels
+sensor.entry_garage_door_sensor_battery:
+  hidden: false
+  icon: mdi:battery
+sensor.front_door_sensor_battery:
+  hidden: false
+  icon: mdi:battery
+
+
+## Contact Sensors
+sensor.garage_door:
+  hidden: false
+  icon: mdi:garage
+sensor.entry_garage_door:
+  hidden: false
+  icon: mdi:door
+sensor.front_door:
+  hidden: false
+  icon: mdi:door
+sensor.back_door:
+  hidden: false
+  icon: mdi:door
+sensor.patio_door:
+  hidden: false
+  icon: mdi:door
+
+## Time
+sensor.time_date:
+  hidden: true
+
+## Template
+sensor.home_presence:
+  hidden: false
+  icon: mdi:home-map-marker
+sensor.home_security:
+  hidden: false
+  icon: mdi:security-home
+
+## Speedtest
+sensor.speedtest_ping:
+  hidden: false
+  icon: mdi:speedometer
+sensor.speedtest_download:
+  hidden: false
+  icon: mdi:download
+sensor.speedtest_upload:
+  hidden: false
+  icon: mdi:upload

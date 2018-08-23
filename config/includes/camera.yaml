@@ -1,0 +1,33 @@
+# ZoneMinder
+# - platform: zoneminder
+
+# Foscams
+#- platform: foscam
+#  name: 'Front Door'
+#  ip: !secret foscam_cam1
+#  username: !secret foscam1_un
+#  password: !secret foscam1_pw
+#- platform: foscam
+#  name: 'Driveway'
+#  ip: !secret foscam_cam2
+#  username: !secret foscam2_un
+#  password: !secret foscam2_pw
+
+# D-Link Cams
+#- platform: generic
+#  name: 'Addy Cam'
+#  still_image_url: !secret addy_cam_url
+#  username: !secret addy_cam_un
+#  password: !secret addy_cam_pw
+#- platform: generic
+#  name: 'Kitchen Cam'
+#  still_image_url: !secret kitchen_cam_url
+#  username: !secret kitchen_cam_un
+#  password: !secret kitchen_cam_pw
+
+- platform: generic
+  name: 'Carmichael'
+  still_image_url: !secret carmichael_cam_url
+- platform: generic
+  name: 'Bridge'
+  still_image_url: !secret bridge_cam_url

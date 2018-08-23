@@ -1,0 +1,11 @@
+# Delete history
+- alias: 'History Purge'
+  trigger:
+    - platform: time
+      hours: '02'
+      minutes: '00'
+      seconds: '00'
+  action:
+    service: recorder.purge
+    data:
+      keep_days: 2

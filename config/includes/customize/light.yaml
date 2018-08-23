@@ -1,0 +1,6 @@
+light.kitchen_light:
+  icon: mdi:ceiling-light
+light.dining_room_light:
+  icon: mdi:ceiling-light
+light.cabinet_lights:
+  icon: mdi:led-strip

@@ -1,0 +1,65 @@
+# Turn NL app ON at SUNSET and OFF at SUNRISE
+- alias: 'App Toggle Basement Night Light'
+  trigger:
+    - platform: sun
+      event: sunrise
+    - platform: sun
+      event: sunset
+  action:
+    service_template: >-
+      {%- if is_state("sun.sun", "above_horizon") -%}
+      homeassistant.turn_on
+      {%- else -%}
+      homeassistant.turn_off
+      {%- endif %}
+    entity_id: switch.basement_nl
+
+# Turning on the lights when motion, if timer is active reset
+- alias: 'Basement NL Motion active'
+  trigger:
+    - platform: state
+      entity_id: sensor.basement_motion
+      from: 'inactive'
+      to: 'active'
+  condition:
+    condition: template
+    value_template: '{{ states.remote.family_room.state == "off" }}'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.basement_nl_scene
+    - condition: state
+      entity_id: timer.basement_nl_timer
+      state: active
+    - service: timer.start
+      entity_id: timer.basement_nl_timer
+
+# Start timer.hall_nl_timer when sensors are inactive
+- alias: 'Basement NL Motion inactive'
+  trigger:
+    - platform: state
+      entity_id: sensor.basement_motion
+      from: 'active'
+      to: 'inactive'
+  condition:
+    condition: template
+    value_template: '{{ states.remote.family_room.state == "off" }}'
+  action:
+    service: timer.start
+    entity_id: timer.basement_nl_timer
+
+# Turn off lights when timer is done
+- alias: 'Basement NL Timer Done'
+  trigger:
+    platform: event
+    event_type: timer.finished
+    event_data:
+      entity_id: timer.basement_nl_timer
+  condition:
+    condition: template
+    value_template: '{{ states.remote.family_room.state == "off" }}'
+  action:
+    service: light.turn_off
+    entity_id:
+      - light.basement_entry
+      - light.basement_lamp
+      - light.badger_lamp

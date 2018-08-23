@@ -1,0 +1,5 @@
+## IP cameras
+camera.addy_cam:
+  hidden: false
+  icon: mdi:camcorder
+

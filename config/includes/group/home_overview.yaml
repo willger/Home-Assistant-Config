@@ -1,0 +1,146 @@
+## to view auto hometab catch all comment out 'default_view' and uncomment 'home_tab'
+#Home_Tab:
+default_view:
+  name: 'home'
+  view: yes
+  icon: mdi:home
+  entities:
+    - persistent_notification.httplogin
+    - group.humans
+    - group.living_room
+    - group.kitchen_dining
+    - group.upstairs
+    - group.basement
+    - group.bedroom
+    - group.home_state_view
+    - group.temperature
+    - group.my_switches
+    #- group.music_spotify
+
+humans:
+  name: 'Humans'
+  control: hidden
+  entities:
+    - device_tracker.ryan_phone
+    - device_tracker.beth_phone
+
+home_state_view:
+  name: 'Home State'
+  control: hidden
+  entities:
+    - sensor.home_presence
+    - sensor.home_security
+    - proximity.home
+
+temperature:
+  name: 'Temperature'
+  control: hidden
+  entities:
+    - climate.upstairs
+    - sensor.pws_temp_f
+
+######## Living Room ##########
+living_room:
+  name: 'Living Room'
+  control: hidden
+  entities:
+    - sensor.living_room_tv
+    - group.living_room_lamps
+
+living_room_tv:
+  name: 'Living Room TV'
+  control: hidden
+  entities:
+    - sensor.living_room_tv
+
+living_room_lamps:
+  name: 'Lamps'
+  entities:
+    - light.left_lamp
+    - light.right_lamp
+
+#### Kitchen & Dining Rooms ####
+
+kitchen_dining:
+  name: 'Kitchen / Dining'
+  control: hidden
+  entities:
+    - switch.aeotec_relay_kitchen_light
+    - light.cabinet_lights
+    - switch.aeotec_relay_dining_room_light
+    - sensor.kitchen_motion
+
+########### Bedroom ###########
+bedroom:
+  name: 'Bedroom'
+  control: hidden
+  entities:
+    - group.bedroom_lamps
+    - sensor.bedroom_tv
+    - group.bedroom_tv
+
+bedroom_lamps:
+  name: 'Lamps'
+  entities:
+    - light.beths_lamp
+    - light.ryans_lamp
+
+bedroom_tv:
+  name: 'TV Activities'
+  control: hidden
+  entities:
+    - script.tv_bedroom_fire_tv
+    - script.tv_bedroom_watch_tv
+    - script.tv_bedroom_power_off
+
+#### upstairs general Group ####
+upstairs:
+  name: 'Upstairs Lights'
+  control: hidden
+  entities:
+    - switch.porch_lights_switch
+    - sensor.hall_motion
+    - light.office_lamp
+
+########### Basement ##########
+basement:
+  name: 'Down Stairs'
+  control: hidden
+  entities:
+    - sensor.family_room_tv
+    - light.basement_entry
+    - light.badger_lamp
+    - light.basement_lamp
+    - light.bar_lights
+    - sensor.basement_motion
+
+family_room_tv:
+  name: 'Family Room TV'
+  control: hidden
+  entities:
+    - sensor.family_room_tv
+
+### Conditional switches
+
+my_switches:
+  name: 'My Switches'
+  control: hidden
+  entities:
+    - switch.basement_nl
+    - switch.hall_nl
+    - switch.garage_door_opener
+
+music_spotify:
+  name: Music
+  entities:
+  - input_select.spotify_playlist
+  - input_select.spotify_source
+  - script.spotify_music
+  - input_slider.spotify_volume
+
+# used for sun light trigger
+sunset_lights:
+  entities:
+    - light.left_lamp
+    - light.right_lamp
+    - light.cabinet_lights

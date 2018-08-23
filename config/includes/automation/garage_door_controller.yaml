@@ -1,0 +1,14 @@
+# Toggle Off Garage Door outlet after it's turned on
+- alias: 'Garage Door Power Toggle'
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: switch.garage_door_opener
+    to: 'on'
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 10
+  action:
+    service: homeassistant.turn_off
+    entity_id: switch.garage_door_opener

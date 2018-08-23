@@ -1,0 +1,134 @@
+homeassistant:
+  name: 'home'
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  elevation: 264
+  unit_system: imperial
+  time_zone: America/Chicago
+  customize: !include include/customize.yaml
+  customize_glob: !include include/customize_glob.yaml
+  auth_providers:
+   - type: homeassistant
+
+auth:
+config:
+map:
+conversation:
+logbook:
+updater:
+sun:
+history:
+#discovery:
+media_extractor:
+
+frontend:
+  javascript_version: latest
+
+http:
+  api_password: !secret api_password
+  base_url: !secret home_url
+  use_x_forwarded_for: True
+  trusted_proxies:
+    - 127.0.0.1
+  ip_ban_enabled: True
+  login_attempts_threshold: 3
+
+duckdns:
+  domain: !secret dns_domain
+  access_token: !secret dns_token
+
+recorder:
+  db_url: !secret db_url
+  purge_keep_days: 7
+  purge_interval: 1
+  exclude:
+    domains:
+      - automation
+      - weblink
+      - updater
+      - time
+tts:
+  - platform: google
+    cache: true
+    language: 'en'
+    cache_dir: /tmp/tts
+    time_memory: 300
+
+google_assistant:
+  project_id: !secret goog_project_id
+  client_id: !secret goog_client_id
+  access_token: !secret goog_access_token
+  api_key: !secret goog_api_key
+  expose_by_default: false
+  entity_config: !include include/google_customize.yaml
+
+
+remote:
+  - platform: harmony
+    name: Living Room
+    host: 192.168.1.32
+  - platform: harmony
+    name: Family Room
+    host: 192.168.1.33
+  - platform: harmony
+    name: Bedroom
+    host: 192.168.1.58
+
+media_player:
+  - platform: roku
+
+nest:
+  client_id: !secret nest_client_id
+  client_secret: !secret nest_client_secret
+
+climate:
+  platform: nest
+
+zwave:
+  usb_path: /dev/ttyACM0
+  network_key: !secret zwave_network_key
+  autoheal: true
+  polling_interval: 60000
+  debug: false
+
+mqtt:
+  broker: 127.0.0.1
+  port: 1883
+  username: !secret mqtt_username
+  client_id: hass
+  password: !secret mqtt_password
+
+influxdb:
+  host: 127.0.0.1
+
+## Owntracks Device Trackers
+device_tracker:
+  - platform: owntracks
+    max_gps_accuracy: 200
+
+ifttt:
+  key: !secret ifttt_key
+
+device_sun_light_trigger:
+  light_group: group.sunset_lights
+  device_group: group.all_devices
+
+#zoneminder:
+#  host: 192.168.1.34
+
+group: !include_dir_merge_named include/group
+automation old: !include_dir_merge_list include/automation
+alert: !include_dir_merge_named include/alert
+camera: !include include/camera.yaml
+script: !include include/scripts.yaml
+proximity: !include_dir_merge_named include/proximity
+scene: !include_dir_merge_list include/scene
+input_select: !include_dir_merge_named include/input
+input_number: !include_dir_merge_named include/input_number
+switch: !include_dir_merge_list include/switch
+light: !include_dir_merge_list include/light
+sensor: !include_dir_merge_list include/sensor
+notify: !include_dir_merge_list include/notify
+binary_sensor: !include include/binary_sensor.yaml
+timer: !include include/timers.yaml
+cover: !include_dir_merge_list cover.yaml

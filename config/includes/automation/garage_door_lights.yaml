@@ -1,0 +1,28 @@
+# Turn on porch lights when any exterior door is open
+# turns on at sunset.
+- alias: 'Door to Light trigger'
+  initial_state: 'off'
+  trigger:
+    platform: state
+    entity_id: group.door_states
+    to: 'open'
+    from: 'closed'
+  condition:
+    condition: template
+    value_template: '{{ is_state("group.door_states","open") and is_state("sensor.entry_garage_door","closed") }}'
+  action:
+    - service: light.turn_on
+      entity_id: switch.porch_lights_switch
+    - service: timer.start
+      entity_id: timer.outside_nl_timer
+
+# Turn off lights when timer is done
+- alias: 'Outside NL Timer Done'
+  trigger:
+    platform: event
+    event_type: timer.finished
+    event_data:
+      entity_id: timer.outside_nl_timer
+  action:
+    service: homeassistant.turn_off
+    entity_id: switch.porch_lights_switch

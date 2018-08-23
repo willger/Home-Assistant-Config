@@ -1,0 +1,76 @@
+# Security Tab
+Security_Tab:
+  name: Security
+  view: yes
+  icon: mdi:lock
+  entities:
+    - group.home_state_control
+    - group.door_states
+    - group.motion_detectors
+    - group.garage_door
+    - group.camera_events
+    - group.home_alerts
+    - group.cameras
+
+# Security Groups
+
+home_state_control:
+  name: 'Home State Control'
+  entities:
+    - input_select.home_presence
+    - alarm_control_panel.home
+
+door_states:
+  name: 'Door States'
+  entities:
+    - sensor.entry_garage_door
+    - sensor.front_door
+    - sensor.back_door
+    - sensor.patio_door
+    - sensor.garage_door
+
+motion_detectors:
+  name: 'Motion Detection'
+  icon: mdi:barcode-scan
+  entities:
+    - sensor.hall_motion
+    - sensor.entry_way_motion
+    - sensor.kitchen_motion
+    - sensor.basement_motion
+
+home_state_view:
+  name: 'Home State'
+  entities:
+    - sensor.home_presence
+    - sensor.home_security
+
+home_alerts:
+  name: 'Alerts'
+  entities:
+    - alert.garage_door_alert
+    - alert.doors_group_alert
+
+camera_events:
+  name: 'Camera Events'
+  entities:
+    - sensor.front_door_status
+    - sensor.front_door_events_last_day
+    - switch.front_door_state
+    - sensor.driveway_status
+    - sensor.driveway_events_last_day
+    - switch.driveway_state
+    - sensor.addy_cam_status
+    - sensor.addy_cam_events_last_day
+    - switch.addy_cam_state
+    - sensor.kitchen_cam_status
+    - sensor.kitchen_cam_events_last_day
+    - switch.kitchen_cam_state
+
+cameras:
+  name: 'Cameras'
+  icon: mdi:video
+  entities:
+    - camera.front_door
+    - camera.driveway
+    - camera.addy_cam
+    - camera.kitchen_cam

@@ -1,0 +1,20 @@
+# OSRAM BULBS
+#- platform: osramlightify
+#  host: 192.168.1.41
+#  allow_lightify_groups: true
+
+- platform: lifx
+
+## Cabinet Lights
+- platform: mqtt
+  name: 'Cabinet Lights'
+  state_topic: 'smartthings/Cabinet Lights/switch'
+  command_topic: 'smartthings/Cabinet Lights/switch'
+  brightness_state_topic: 'smartthings/Cabinet Lights/level'
+  brightness_command_topic: 'smartthings/Cabinet Lights/level'
+  rgb_state_topic: 'smartthings/Cabinet Lights/color'
+  rgb_command_topic: 'smartthings/Cabinet Lights/color'
+  brightness_scale: 100
+  payload_on: 'on'
+  payload_off: 'off'
+  retain: true

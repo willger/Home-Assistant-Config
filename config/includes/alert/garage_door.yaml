@@ -1,0 +1,13 @@
+# The garage door is open
+#  garage_door_alert:
+#    name: 'Garage Door Alert'
+#    done_message: Garage is closed
+#    entity_id: sensor.garage_door
+#    state: 'open'
+#    repeat: 30
+#    can_acknowledge: True
+#    skip_first: False
+#    notifiers: 
+#      - persistent_notification
+#      - maxthedog
+#      - shield

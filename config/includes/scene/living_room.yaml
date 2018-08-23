@@ -1,0 +1,11 @@
+- name: lr_daylight
+  entities:
+    light.living_room:
+      state: on
+      kelvin: 5500
+- name: lr_warmlight
+  entities:
+    light.living_room:
+      state: on
+      kelvin: 3500
+

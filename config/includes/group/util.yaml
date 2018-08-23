@@ -1,0 +1,79 @@
+# Utility Tab
+Utility_Tab:
+  name: Utility
+  view: yes
+  icon: mdi:gauge
+  entities:
+    - group.hass_status
+    - group.device_battery_level
+    - group.speed_test
+    - group.docker_containers
+    - group.home_utils
+    - group.zwave_group
+    - cover.garage_door
+
+# Utility Groups
+hass_status:
+  name: 'HASS Status'
+  entities:
+    - updater.updater
+
+device_battery_level:
+  name: 'Device Battery Level'
+  icon: mdi:battery-charging
+  entities:
+    - sensor.front_door_sensor_battery
+    - sensor.entry_garage_door_battery
+    - sensor.hall_sensor_battery
+    - sensor.entry_way_sensor_battery
+    - sensor.kitchen_sensor_battery
+    - sensor.back_door_sensor_battery
+    - sensor.patio_door_sensor_battery
+    - sensor.garage_door_sensor_battery
+
+docker_containers:
+  name: 'Docker Containers'
+  icon: mdi:application
+  entities:
+    - sensor.mqtt_broker
+    - sensor.stbridge
+    - sensor.hass
+
+speed_test:
+  name: 'Speed Test'
+  icon: mdi:speedometer
+  entities:
+    - sensor.speedtest_ping
+    - sensor.speedtest_download
+    - sensor.speedtest_upload
+
+wakeup_time:
+  name: 'Wakeup Time'
+  entities:
+    - input_number.wakeup_hr
+    - input_number.wakeup_mn
+
+home_utils:
+  name: 'Home Utilities'
+  entities:
+    - group.wakeup_time
+    - script.good_morning_script
+    - script.good_night_script
+    - sensor.home_count
+zwave_group:
+  name: 'Z-Wave'
+  entities:
+    - zwave.aeotec_zw090_zstick_gen5_us
+    - zwave.aeotec_relay
+    - zwave.patio_door
+    - zwave.porch_lights
+    - zwave.kitchen_motion_sensor
+    - zwave.hall_motion_sensor
+    - zwave.garage_door
+    - zwave.garage_door_opener
+    - zwave.front_door
+    - zwave.entry_way_motion_sensor
+    - zwave.entry_garage_door
+    - zwave.basement_motion_sensor
+    - zwave.back_door
+    - zwave.bar_lights

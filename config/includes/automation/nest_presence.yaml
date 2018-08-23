@@ -1,0 +1,51 @@
+- alias: Turn on nest away mode
+  hide_entity: False
+  trigger:
+    - platform: state
+      entity_id: input_select.home_presence
+      from: 'Home'
+      to: 'Away'
+      for:
+        hours: 00
+        minutes: 15
+        seconds: 00
+  condition:
+    condition: and
+    conditions:
+      - condition: template
+        value_template: '{{ states.input_select.home_presence.state != "Guest" }}'
+      - condition: template
+        value_template: '{{ states.climate.upstairs.state != "off" }}'
+  action:
+    - service: climate.set_away_mode
+      data:
+        entity_id: climate.upstairs
+        away_mode: true
+    - service: notify.maxthedog
+      data:
+        message: 'Nest set to "Away Mode".'
+
+- alias: Turn off nest away mode
+  hide_entity: False
+  trigger:
+    - platform: state
+      entity_id: input_select.home_presence
+      from: 'Away'
+      to: 'Home'
+  condition:
+    condition: and
+    conditions:
+      - condition: template
+        value_template: '{{ states.input_select.home_presence.state != "Guest" }}'
+      - condition: template
+        value_template: '{{ states.climate.upstairs.state != "off" }}'
+      - condition: template
+        value_template: '{{ states.sensor.thermostat_upstairs_away_mode.state != "off" }}'
+  action:
+    - service: climate.set_away_mode
+      data:
+        entity_id: climate.upstairs
+        away_mode: false
+    - service: notify.maxthedog
+      data:
+        message: '"Away Mode" turned off for nest.'

@@ -1,0 +1,39 @@
+tv_bedroom_fire_tv:
+  alias: Bedroom TV - Fire TV
+  sequence:
+  - data:
+      activity: fire TV
+      entity_id: remote.bedroom
+    service: remote.turn_on
+tv_bedroom_watch_tv:
+  alias: Bedroom TV - Watch TV
+  sequence:
+  - data:
+      activity: watch tv
+      entity_id: remote.bedroom
+    service: remote.turn_on
+tv_bedroom_power_off:
+  alias: Bedroom TV - Turn Off
+  sequence:
+  - data:
+      entity_id: remote.bedroom
+    service: remote.turn_off
+good_night_script:
+  alias: Good Night Script
+  sequence:
+  - data:
+      entity_id: light.cabinet_lights
+    service: light.turn_off
+  - data:
+      entity_id: group.living_room_lamps
+    service: homeassistant.turn_off
+good_morning_script:
+  alias: Good Morning Script
+  sequence:
+  - data:
+      brightness_pct: 100
+      entity_id: light.cabinet_lights
+    service: light.turn_on
+  - data:
+      entity_id: group.living_room_lamps
+    service: homeassistant.turn_on

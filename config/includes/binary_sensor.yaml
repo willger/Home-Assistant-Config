@@ -1,0 +1,10 @@
+- platform: nest
+  monitored_conditions:
+    - 'online'
+    - 'fan'
+    - 'is_using_emergency_heat'
+    - 'is_locked'
+    - 'has_leaf'
+    #- 'motion_detected'
+    #- 'person_detected'
+    #- 'sound_detected'

@@ -1,0 +1,218 @@
+sensor.hall_motion:
+  hidden: false
+  icon: mdi:walk
+sensor.entry_way_motion:
+  hidden: false
+  icon: mdi:walk
+sensor.basement_motion:
+  hidden: false
+  icon: mdi:walk
+sensor.kitchen_motion:
+  hidden: false
+  icon: mdi:walk
+sensor.entry_garage_door_sensor_battery:
+  hidden: false
+  icon: mdi:battery
+sensor.front_door_sensor_battery:
+  hidden: false
+  icon: mdi:battery
+sensor.time_date:
+  hidden: true
+sensor.home_presence:
+  hidden: false
+  icon: mdi:home-map-marker
+sensor.home_security:
+  hidden: false
+  icon: mdi:security-home
+sensor.speedtest_ping:
+  hidden: false
+  icon: mdi:speedometer
+sensor.speedtest_download:
+  hidden: false
+  icon: mdi:download
+sensor.speedtest_upload:
+  hidden: false
+  icon: mdi:upload
+light.cabinet_lights:
+  icon: mdi:led-strip
+sensor.tv_living_room:
+  icon: mdi:remote
+sensor.tv_basement:
+  icon: mdi:remote
+climate.upstairs:
+  friendly_name: Nest Upstairs
+  hidden: false
+sensor.upstairs_thermostat_temperature:
+  friendly_name: Upstairs Temp
+  hidden: false
+sensor.nest_upstairs:
+  icon: mdi:air-conditioner
+  hidden: true
+sensor.upstairs_thermostat_humidity:
+  friendly_name: Upstairs Humidity
+  icon: mdi:water-percent
+sensor.upstairs_away_mode:
+  hidden: true
+sensor.upstairs_thermostat_target:
+  hidden: true
+sensor.upstairs_thermostat_operation_mode:
+  friendly_name: Nest Mode
+  hidden: true
+sensor.upstairs_nest_protect_battery_health:
+  hidden: true
+sensor.upstairs_nest_protect_co_status:
+  hidden: true
+sensor.upstairs_nest_protect_smoke_status:
+  hidden: true
+binary_sensor.upstairs_nest_protect_online:
+  hidden: true
+binary_sensor.upstairs_thermostat_fan:
+  hidden: true
+binary_sensor.upstairs_thermostat_has_leaf:
+  hidden: true
+binary_sensor.upstairs_thermostat_is_using_emergency_heat:
+  hidden: true
+binary_sensor.upstairs_thermostat_is_locked:
+  hidden: true
+binary_sensor.upstairs_thermostat_online:
+  hidden: true
+sensor.pws_alerts:
+  friendly_name: Weather Alerts
+  icon: mdi:alert-outline
+sensor.pws_feelslike_f:
+  friendly_name: Temp Feels Like
+  icon: mdi:weather-sunny
+sensor.pws_heat_index_f:
+  friendly_name: Heat Index
+  icon: mdi:weather-sunny
+sensor.pws_precip_today_in:
+  friendly_name: Precip (rain)
+  icon: mdi:scale
+sensor.pws_temp_f:
+  friendly_name: Outside Temp
+  icon: mdi:thermometer-lines
+sensor.pws_weather:
+  friendly_name: Weather Conditions
+  icon: mdi:weather-lightning-rainy
+sensor.pws_relative_humidity:
+  friendly_name: Relative Humidity
+  icon: mdi:water-percent
+sun.sun:
+  hidden: false
+group.all_devices:
+  hidden: true
+light.basement_entry:
+  icon: mdi:ceiling-light
+sensor.tv_family_room:
+  icon: mdi:remote
+sensor.tv_bedroom:
+  icon: mdi:remote
+group.default_view:
+  order: '1'
+group.lights_tab:
+  order: '2'
+group.weather_tab:
+  order: '3'
+group.security_tab:
+  order: '4'
+group.automations_tab:
+  order: '5'
+group.utility_tab:
+  order: '6'
+group.living_room_lamps:
+  icon: mdi:lamp
+group.bedroom_tv:
+  icon: mdi:remote
+script.tv_bedroom_fire_tv:
+  friendly_name: Fire TV
+script.tv_bedroom_power_off:
+  friendly_name: Turn Off
+script.tv_bedroom_watch_tv:
+  friendly_name: Watch TV
+group.family_room_tv:
+  icon: mdi:television
+group.living_room:
+  icon: mdi:television
+group.living_room_tv:
+  icon: mdi:television
+group.bedroom_lamps:
+  icon: mdi:lamp
+sensor.bedroom_tv:
+  icon: mdi:television-classic
+sensor.living_room_tv:
+  icon: mdi:television-classic
+sensor.family_room_tv:
+  icon: mdi:television-classic
+switch.porch_lights_switch:
+  friendly_name: Porch Lights
+  icon: mdi:spotlight-beam
+switch.aeotec_relay_dining_room_light:
+  friendly_name: Dining Room Light
+  icon: mdi:ceiling-light
+switch.aeotec_relay_kitchen_light:
+  friendly_name: Kitchen Light
+  icon: mdi:ceiling-light
+zone.grandma_l:
+  icon: mdi:home-heart
+  passive: 'true'
+zone.home:
+  latitude: 44.9755949
+  longitude: -92.7094762
+  radius: 300
+light.level:
+  icon: mdi:ceiling-light
+light.bar_lights:
+  icon: mdi:ceiling-light
+sensor.home_count:
+  icon: mdi:account-multiple
+  unit_of_measurement: Humans
+sensor.thermostat_upstairs_away_mode:
+  icon: mdi:map-marker-radius
+sensor.upstairs_thermostat_hvac_state:
+  icon: mdi:radiator
+sensor.addy_cam_status:
+  friendly_name: Addy Cam Mode
+  icon: mdi:cctv
+sensor.kitchen_cam_status:
+  friendly_name: Kitchen Cam Mode
+  icon: mdi:cctv
+sensor.driveway_status:
+  friendly_name: Driveway Cam Mode
+  icon: mdi:cctv
+sensor.front_door_status:
+  friendly_name: Front Door Cam Mode
+  icon: mdi:cctv
+camera.kitchen_cam:
+  friendly_name: Kitchen Cam
+  icon: mdi:cctv
+sensor.kitchen_cam_events_last_day:
+  friendly_name: Kitchen Cam Events
+  icon: mdi:format-list-bulleted
+camera.front_door:
+  friendly_name: Front Door Cam
+  icon: mdi:cctv
+sensor.front_door_events_last_day:
+  friendly_name: Front Door Events
+  icon: mdi:format-list-bulleted
+camera.addy_cam:
+  friendly_name: Addy Cam
+  icon: mdi:cctv
+sensor.addy_cam_events_last_day:
+  friendly_name: Addy Cam Events
+  icon: mdi:format-list-bulleted
+camera.driveway:
+  friendly_name: Driveway Cam
+  icon: mdi:cctv
+sensor.driveway_events_last_day:
+  friendly_name: Driveway Cam Events
+  icon: mdi:format-list-bulleted
+switch.front_door_state:
+  friendly_name: Front Door Cam State
+switch.addy_cam_state:
+  friendly_name: Addy Cam State
+switch.kitchen_cam_state:
+  friendly_name: Kitchen Cam State
+sensor.kitchen_motion_sensor_temperature:
+  friendly_name: Addy's Room Temperature
+zone.bby:
+  radius: 300

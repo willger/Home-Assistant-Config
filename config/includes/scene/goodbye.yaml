@@ -1,0 +1,12 @@
+- name: goodbye_scene
+  entities:
+    group.living_room_lights:
+      state: off
+    light.cabinet_lights:
+      state: off
+    light.bedroom:
+      state: off
+    light.office_lamp:
+      state: off
+    group.basement_lights:
+      state: off

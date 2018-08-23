@@ -1,0 +1,21 @@
+- name: hall_nl_scene
+  entities:
+    light.living_room:
+      state: on
+      brightness: 25
+      kelvin: 3500
+    light.cabinet_lights:
+      state: on
+      brightness: 50
+
+- name: basement_nl_scene
+  entities:
+    light.basement_entry:
+      state: on
+      brightness: 25
+    light.basement_lamp:
+      state: on
+      brightness: 25
+    light.badger_lamp:
+      state: on
+      brightness: 25

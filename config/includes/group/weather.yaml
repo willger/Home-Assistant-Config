@@ -1,0 +1,47 @@
+# Weather Tab
+Weather_Tab:
+  name: Weather
+  view: yes
+  icon: mdi:weather-partlycloudy
+  entities:
+    - group.sun_status
+    - group.inside_weather
+    - group.hvac_status
+    - group.outside_weather
+    - camera.i94_carmichael
+    - camera.i94_bridge
+# Weather Groups
+sun_status:
+ name: 'sun status'
+ icon: mdi:weather-sunset
+ entities:
+   - sun.sun
+   - sun.next_rising
+   - sun.next_setting
+
+hvac_status:
+  name: 'HVAC Status'
+  entities:
+    - sensor.thermostat_upstairs_away_mode
+    - sensor.upstairs_thermostat_hvac_state
+
+inside_weather:
+  name: 'Inside Temperature'
+  icon: mdi:thermometer-lines
+  entities:
+    - climate.upstairs
+    - sensor.upstairs_thermostat_humidity
+    - sensor.hall_motion_sensor_temperature
+    - sensor.kitchen_motion_sensor_temperature
+    - sensor.entry_way_motion_sensor_temperature
+
+outside_weather:
+  name: 'Outside Weather'
+  entities:
+    - sensor.pws_alerts
+    - sensor.pws_temp_f
+    - sensor.pws_feelslike_f
+    - sensor.pws_heat_index_f
+    - sensor.pws_precip_today_in
+    - sensor.pws_relative_humidity
+    - sensor.pws_weather

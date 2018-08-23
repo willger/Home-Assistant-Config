@@ -1,0 +1,14 @@
+hall_nl_timer:
+  name: 'Hall NL Timer'
+  duration: 00:05:00
+  icon: mdi:timer
+
+basement_nl_timer:
+  name: 'Basement NL Timer'
+  duration: 00:05:00
+  icon: mdi:timer
+
+outside_nl_timer:
+  name: 'Outside NL Timer'
+  duration: 00:05:00
+  icon: mdi:timer
