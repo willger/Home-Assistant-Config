@@ -1,0 +1,11 @@
+*.pid
+*.xml
+*.csr
+*.crt
+*.key
+*.conf
+*.db-journal
+.DS_Store
+.HA_VERSION
+._.DS_STORE
+ansible_playbooks
