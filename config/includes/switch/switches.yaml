@@ -1,4 +1,0 @@
-switch:
-  - platform: tplink
-    name: TP-Link Switch
-    host: 192.168.1.118

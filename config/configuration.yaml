@@ -123,10 +123,9 @@ camera: !include include/camera.yaml
 script: !include include/scripts.yaml
 proximity: !include_dir_merge_named include/proximity
 scene: !include_dir_merge_list include/scene
-input_select: !include_dir_merge_named include/input
-input_number: !include_dir_merge_named include/input_number
-switch: !include_dir_merge_list include/switch
-light: !include_dir_merge_list include/light
+input_select: !include include/input.yaml
+switch: !include include/switch.yaml
+light: !include include/light.yaml
 sensor: !include_dir_merge_list include/sensor
 notify: !include_dir_merge_list include/notify
 binary_sensor: !include include/binary_sensor.yaml

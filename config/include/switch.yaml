@@ -23,4 +23,11 @@
         service: homeassistant.turn_off
         entity_id: group.basement_nl_app
 
+switch:
+  - platform: tplink
+    name: TP-Link Switch
+    host: 192.168.1.118
 
+#- platform: zoneminder
+#  command_on: Modect
+#  command_off: Monitor
