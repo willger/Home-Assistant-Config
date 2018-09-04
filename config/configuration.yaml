@@ -79,8 +79,8 @@ media_player:
 
 emulated_roku:
   host_ip: !secret hass_ip
-  listen_ports:
-    - 8060
+  upnp_bind_multicast: True
+  listen_ports: 8060
 
 nest:
   client_id: !secret nest_client_id
