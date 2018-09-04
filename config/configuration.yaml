@@ -77,6 +77,11 @@ remote:
 media_player:
   - platform: roku
 
+emulated_roku:
+  host_ip: !secret hass_ip
+  listen_ports:
+    - 8060
+
 nest:
   client_id: !secret nest_client_id
   client_secret: !secret nest_client_secret
