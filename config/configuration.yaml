@@ -127,7 +127,7 @@ input_select: !include include/input.yaml
 switch: !include include/switch.yaml
 light: !include include/light.yaml
 sensor: !include_dir_merge_list include/sensor
-notify: !include_dir_merge_list include/notify
+notify: !include include/notify.yaml
 binary_sensor: !include include/binary_sensor.yaml
 timer: !include include/timers.yaml
 cover: !include_dir_merge_list cover.yaml
