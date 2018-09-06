@@ -126,7 +126,7 @@ weather:
 #  host: 192.168.1.34
 
 group: !include_dir_merge_named include/group
-automation: !include automation.yaml
+automation: !include automations.yaml
 automation old: !include_dir_merge_list include/automation
 alert: !include_dir_merge_named include/alert
 camera: !include include/camera.yaml
