@@ -2,3 +2,7 @@
     name: maxthedog
     api_key: !secret slack_api_key
     default_channel: '#houseofger'
+
+  - platform: nfandroidtv
+    name: fireTV
+    host: !secret firetv_ip

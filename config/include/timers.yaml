@@ -12,3 +12,7 @@ outside_nl_timer:
   name: 'Outside NL Timer'
   duration: 00:05:00
   icon: mdi:timer
+
+bedroom_sleep_timer:
+  name: 'Bedroom Sleep Timer'
+  icon: mdi:timer
