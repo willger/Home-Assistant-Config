@@ -77,6 +77,11 @@ remote:
 media_player:
   - platform: roku
 
+emulated_roku:
+  host_ip: !secret hass_ip
+  upnp_bind_multicast: True
+  listen_ports: 8060
+
 nest:
   client_id: !secret nest_client_id
   client_secret: !secret nest_client_secret
@@ -112,6 +117,10 @@ ifttt:
 device_sun_light_trigger:
   light_group: group.sunset_lights
   device_group: group.all_devices
+
+weather:
+- platform: openweathermap
+  api_key: !secret openweathermap_api_key
 
 #zoneminder:
 #  host: 192.168.1.34
