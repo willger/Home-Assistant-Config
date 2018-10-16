@@ -56,8 +56,6 @@ tts:
 
 google_assistant:
   project_id: !secret goog_project_id
-  client_id: !secret goog_client_id
-  access_token: !secret goog_access_token
   api_key: !secret goog_api_key
   expose_by_default: false
   entity_config: !include include/google_customize.yaml
