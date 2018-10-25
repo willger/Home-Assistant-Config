@@ -2,20 +2,20 @@
   entities:
     light.living_room:
       state: on
-      brightness: 25
+      brightness: 50
       kelvin: 3500
     light.cabinet_lights:
       state: on
-      brightness: 50
+      brightness: 100
 
 - name: basement_nl_scene
   entities:
     light.basement_entry:
       state: on
-      brightness: 25
+      brightness: 50
     light.basement_lamp:
       state: on
-      brightness: 25
+      brightness: 50
     light.badger_lamp:
       state: on
-      brightness: 25
+      brightness: 50
