@@ -35,9 +35,7 @@ docker_containers:
   name: 'Docker Containers'
   icon: mdi:application
   entities:
-    - sensor.mqtt_broker
-    - sensor.stbridge
-    - sensor.hass
+    - sensor.hass_latest_docker
 
 speed_test:
   name: 'Speed Test'
