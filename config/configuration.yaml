@@ -5,7 +5,7 @@ homeassistant:
   elevation: 264
   unit_system: imperial
   time_zone: America/Chicago
-  customize: !include include/customize.yaml
+  customize: !include customize.yaml
   customize_glob: !include include/customize_glob.yaml
   auth_providers:
    - type: homeassistant
