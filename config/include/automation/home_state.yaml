@@ -1,0 +1,36 @@
+#Change Home Status when home is unoccupied
+# as long as guest mode is inactive.
+
+# Set presence to away when away. AND set alarm panel to alarm_arm_away
+- alias: Presence Not Home
+  trigger:
+    platform: state
+    entity_id: group.all_devices
+    from: 'home'
+  condition:
+    condition: template
+    value_template: '{{ states.input_select.home_presence.state != "Guest" and states.group.all_devices.state != "home" }}'
+  action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.home_presence
+        option: 'Away'
+#    - service: alarm_control_panel.alarm_arm_away
+#      data:
+#        entity_id: alarm_control_panel.home_alarm
+#        code: ####
+
+  # Set presence to home when home. AND set alarm panel to alarm_disarm
+- alias: Presence Home
+  trigger:
+   platform: state
+   entity_id: group.all_devices
+   to: 'home'
+  condition:
+    condition: template
+    value_template: '{{ states.input_select.home_presence.state != "Guest" }}'
+  action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.home_presence
+        option: 'Home'
