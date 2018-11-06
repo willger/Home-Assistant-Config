@@ -31,26 +31,3 @@
   action:
     service: homeassistant.turn_off
     entity_id: group.porch_lights_minder
-
-### Show / Hide Night Light switch Card depending on sun status
-#- alias: 'Show NL card at sunset'
-#  initial_state: 'on'
-#  trigger:
-#    platform: sun
-#    event: sunset
-#  action:
-#    service: group.set_visibility
-#    entity_id: group.my_switches
-#    data:
-#      visible: True
-
-#- alias: 'Hide NL card at sunrise'
-#  initial_state: 'on'
-#  trigger:
-#    platform: sun
-#    event: sunrise
-#  action:
-#    service: group.set_visibility
-#    entity_id: group.my_switches
-#    data:
-#      visible: False
