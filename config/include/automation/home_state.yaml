@@ -15,17 +15,6 @@
       data:
         entity_id: input_select.home_presence
         option: 'Away'
-    - service: lock.lock
-      data:
-        entity_id: lock.kwikset_touchpad_electronic_deadbolt_locked
-    - service: homeassistant.turn_off
-      entity_id:
-        - light.left_lamp
-        - light.right_lamp
-        - light.cabinet_lights
-    - service: notify.maxthedog
-      data:
-        message: 'House set to away mode, Doors locked.'
 
   # Set presence to home when home. AND set alarm panel to alarm_disarm
 - alias: Presence Home
@@ -41,3 +30,22 @@
       data:
         entity_id: input_select.home_presence
         option: 'Home'
+
+# Put routines here when input select changes.
+- alias: Away Routine
+  trigger:
+    - platform: state
+      entity_id: input_select.home_presence
+      to: 'Away'
+  action:
+    - service: lock.lock
+      data:
+        entity_id: lock.kwikset_touchpad_electronic_deadbolt_locked
+    - service: homeassistant.turn_off
+      entity_id:
+        - light.left_lamp
+        - light.right_lamp
+        - light.cabinet_lights
+    - service: notify.maxthedog
+      data:
+        message: 'House set to away mode, Doors locked.'
