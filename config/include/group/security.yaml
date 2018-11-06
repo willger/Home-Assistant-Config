@@ -79,6 +79,6 @@ cameras:
 lock_card:
   name: Front Door Lock
   entities:
-    - lock.front_door_lock_locked
+    - lock.kwikset_touchpad_electronic_deadbolt_locked
     - sensor.lock_front_door_battery
     - sensor.lock_front_door_status
