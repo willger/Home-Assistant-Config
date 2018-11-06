@@ -70,6 +70,7 @@ zwave_group:
     - zwave.garage_door
     - zwave.garage_door_opener
     - zwave.front_door
+    - zwave.front_door_lock
     - zwave.entry_way_motion_sensor
     - zwave.entry_garage_door
     - zwave.basement_motion_sensor
