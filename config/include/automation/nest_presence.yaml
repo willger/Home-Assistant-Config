@@ -21,6 +21,9 @@
       data:
         entity_id: climate.upstairs
         away_mode: true
+    - service: lock.lock
+      data:
+        entity_id: lock.kwikset_touchpad_electronic_deadbolt_locked
     - service: notify.maxthedog
       data:
         message: 'Nest set to "Away Mode".'
