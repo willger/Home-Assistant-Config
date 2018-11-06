@@ -45,7 +45,7 @@
       value_template: '{{ states.zwave.front_door_lock.attributes.battery_level }}'
       unit_of_measurement: '%'
       entity_id: zwave.front_door_lock
-    lock_front_door_status: 
+    lock_front_door_status:
       friendly_name: 'Front Door Lock Status'
-      value_template: '{{ states.lock.kwikset_touchpad_electronic_deadbolt_locked.attributes.lock_status }}'
+      value_template: '{{ states.lock.kwikset_touchpad_electronic_deadbolt_locked.state }}'
       entity_id: lock.front_door_lock_locked
