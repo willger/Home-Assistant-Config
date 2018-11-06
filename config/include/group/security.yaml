@@ -10,6 +10,7 @@ Security_Tab:
     - group.garage_door
     - group.camera_events
     - group.home_alerts
+    - group.lock_card
     - group.cameras
 
 # Security Groups
@@ -74,3 +75,10 @@ cameras:
     - camera.driveway
     - camera.addy_cam
     - camera.kitchen_cam
+
+lock_card:
+  name: Front Door Lock
+  entities:
+    - lock.front_door_lock_locked
+    - sensor.lock_front_door_battery
+    - sensor.lock_front_door_status
