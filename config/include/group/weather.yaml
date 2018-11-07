@@ -4,12 +4,13 @@ Weather_Tab:
   view: yes
   icon: mdi:weather-partlycloudy
   entities:
+    - weather.openweathermap
     - group.sun_status
     - group.inside_weather
     - group.hvac_status
     - group.outside_weather
-    - camera.i94_carmichael
-    - camera.i94_bridge
+    - camera.carmichael
+    - camera.bridge
 # Weather Groups
 sun_status:
  name: 'sun status'
