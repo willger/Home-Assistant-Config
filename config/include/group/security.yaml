@@ -19,7 +19,7 @@ home_state_control:
   name: 'Home State Control'
   entities:
     - input_select.home_presence
-    - alarm_control_panel.home
+    - switch.guest_mode
 
 door_states:
   name: 'Door States'
@@ -44,12 +44,6 @@ home_state_view:
   entities:
     - sensor.home_presence
     - sensor.home_security
-
-home_alerts:
-  name: 'Alerts'
-  entities:
-    - alert.garage_door_alert
-    - alert.doors_group_alert
 
 camera_events:
   name: 'Camera Events'
