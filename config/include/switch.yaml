@@ -24,7 +24,7 @@
           entity_id: group.basement_nl_app
           
   # Guest Mode switch. Used overide functions of the home/away presence detection for when guests are over. 
-      basement_nl:
+      guest_mode_switch:
         friendly_name: 'Guest Mode'
         value_template: '{{ is_state("input_select.home_presence", "Guest") }}'
         turn_on:
