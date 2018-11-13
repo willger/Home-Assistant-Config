@@ -19,7 +19,7 @@ home_state_control:
   name: 'Home State Control'
   entities:
     - input_select.home_presence
-    - switch.guest_mode
+    - switch.guest_mode_switch
 
 door_states:
   name: 'Door States'
