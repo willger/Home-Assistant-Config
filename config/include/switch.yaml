@@ -22,10 +22,23 @@
         turn_off:
           service: homeassistant.turn_off
           entity_id: group.basement_nl_app
+          
+  # Guest Mode switch. Used overide functions of the home/away presence detection for when guests are over. 
+      basement_nl:
+        friendly_name: 'Guest Mode'
+        value_template: '{{ is_state("input_select.home_presence", "Guest") }}'
+        turn_on:
+          service: input_select.select_option
+          data:
+            entity_id: "input_select.home_presence"
+            option:"Guest"
+        turn_off:
+          service: input_select.select_previous
+          entity_id: input_select.home_presence
 
-  - platform: tplink
-    name: TP-Link Switch
-    host: 192.168.1.118
+#  - platform: tplink
+#    name: TP-Link Switch
+#    host: 192.168.1.118
 
 #- platform: zoneminder
 #  command_on: Modect
