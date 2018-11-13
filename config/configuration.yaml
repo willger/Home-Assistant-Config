@@ -123,13 +123,12 @@ weather:
 #zoneminder:
 #  host: 192.168.1.34
 
-group: !include_dir_merge_named include/group
-alert: !include_dir_merge_named include/alert
 automation: !include automations.yaml
 automation old: !include_dir_merge_list include/automation
 binary_sensor: !include include/binary_sensor.yaml
 camera: !include include/camera.yaml
 cover: !include_dir_merge_list cover.yaml
+group: !include_dir_merge_named include/group
 input_select: !include include/input.yaml
 light: !include include/light.yaml
 notify: !include include/notify.yaml
