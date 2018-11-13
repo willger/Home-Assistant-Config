@@ -124,18 +124,18 @@ weather:
 #  host: 192.168.1.34
 
 group: !include_dir_merge_named include/group
+alert: !include_dir_merge_named include/alert
 automation: !include automations.yaml
 automation old: !include_dir_merge_list include/automation
-alert: !include_dir_merge_named include/alert
+binary_sensor: !include include/binary_sensor.yaml
 camera: !include include/camera.yaml
-script: !include include/scripts.yaml
+cover: !include_dir_merge_list cover.yaml
+input_select: !include include/input.yaml
+light: !include include/light.yaml
+notify: !include include/notify.yaml
 proximity: !include_dir_merge_named include/proximity
 scene: !include_dir_merge_list include/scene
-input_select: !include include/input.yaml
-switch: !include include/switch.yaml
-light: !include include/light.yaml
 sensor: !include_dir_merge_list include/sensor
-notify: !include include/notify.yaml
-binary_sensor: !include include/binary_sensor.yaml
+script: !include scripts.yaml
+switch: !include include/switch.yaml
 timer: !include include/timers.yaml
-cover: !include_dir_merge_list cover.yaml
