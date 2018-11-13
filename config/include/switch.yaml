@@ -31,7 +31,7 @@
           service: input_select.select_option
           data:
             entity_id: "input_select.home_presence"
-            option:"Guest"
+            option: "Guest"
         turn_off:
           service: input_select.select_previous
           entity_id: input_select.home_presence
