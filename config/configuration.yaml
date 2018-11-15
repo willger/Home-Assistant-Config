@@ -111,6 +111,8 @@ influxdb:
 device_tracker:
   - platform: owntracks
     max_gps_accuracy: 200
+  - platform: linksys_smart
+    host: 192.168.1.1
 
 ifttt:
   key: !secret ifttt_key
