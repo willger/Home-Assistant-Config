@@ -12,5 +12,6 @@
 
 - platform: command_line
   name: Hass Latest Docker
-  command: curl -sS "https://registry.hub.docker.com/v2/repositories/homeassistant/home-assistant/tags/" | grep -o '\"name\": \"[^"]*\"' | sort | head -1
+  command: echo test
+  #command: curl -sS "https://registry.hub.docker.com/v2/repositories/homeassistant/home-assistant/tags/" | grep -o '\"name\": \"[^"]*\"' | sort | head -1
   scan_interval: 28800
