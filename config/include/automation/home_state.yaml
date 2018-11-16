@@ -7,9 +7,10 @@
     platform: state
     entity_id: group.humans
     from: 'home'
+    to: 'not_home'
   condition:
     condition: template
-    value_template: '{{ states.input_select.home_presence.state != "Guest" and states.group.all_devices.state != "home" }}'
+    value_template: '{{ states.input_select.home_presence.state != "Guest" and states.group.humans.state != "home" }}'
   action:
     - service: input_select.select_option
       data:
