@@ -14,4 +14,4 @@
   name: Hass Latest Docker
   command: >-
     curl -sS "https://registry.hub.docker.com/v2/repositories/homeassistant/home-assistant/tags/" | grep -o '"name": "\d[^"]*"' | sort -r | head -1 | sed 's/[^0-9.]//g'
-  scan_interval: 28800
+  scan_interval: 14400
