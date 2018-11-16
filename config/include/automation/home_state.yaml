@@ -5,7 +5,7 @@
 - alias: Presence Not Home
   trigger:
     platform: state
-    entity_id: group.all_devices
+    entity_id: group.humans
     from: 'home'
   condition:
     condition: template
@@ -20,7 +20,7 @@
 - alias: Presence Home
   trigger:
    platform: state
-   entity_id: group.all_devices
+   entity_id: group.humans
    to: 'home'
   condition:
     condition: template
