@@ -33,28 +33,3 @@
   action:
     - service: homeassistant.turn_off
       entity_id: switch.porch_lights_switch
-
-#Turn On porch lights at sunset when away OR the Garage Door is open.
-- alias: 'Sunset Porch Lights'
-  hide_entity: False
-  trigger:
-    platform: sun
-    event: sunset
-  condition:
-    condition: numeric_state
-    entity_id: sensor.home_count
-    below: 2
-  action:
-    - service: homeassistant.turn_on
-      entity_id: switch.porch_lights_switch
-
-- alias: 'Activate Porch Lights Minder'
-  hide_entity: false
-  trigger:
-    platform: sun
-    event: sunset
-  action:
-    - service: homeassistant.turn_on
-      entity_id:
-        - group.porch_lights_minder
-        - automation.door_to_light_trigger
