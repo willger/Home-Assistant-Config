@@ -45,19 +45,14 @@ speed_test:
     - sensor.speedtest_download
     - sensor.speedtest_upload
 
-wakeup_time:
-  name: 'Wakeup Time'
-  entities:
-    - input_number.wakeup_hr
-    - input_number.wakeup_mn
-
 home_utils:
   name: 'Home Utilities'
   entities:
-    - group.wakeup_time
     - script.good_morning_script
     - script.good_night_script
     - sensor.home_count
+    - proximity.home
+
 zwave_group:
   name: 'Z-Wave'
   entities:
