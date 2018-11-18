@@ -3,6 +3,7 @@ test:
   image: homeassistant/home-assistant
 
   script:
-    - cd /usr/src/app
-    - /usr/local/bin/python -m homeassistant --config /builds/willger/Home-Assistant/config --script check_config
+    - export PYTHONPATH=/usr/src/app #Use instead of CP
+    - cp test_secrets.yaml secrets.yaml #Fake secrets because.
+    - /usr/local/bin/python -m homeassistant --config $CI_PROJECT_DIR/config/ --script check_config
     - echo $?
