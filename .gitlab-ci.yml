@@ -6,5 +6,6 @@ test:
     - cp $CI_PROJECT_DIR/config/test_secrets.yaml $CI_PROJECT_DIR/config/secrets.yaml #Fake secrets because.
     - touch $CI_PROJECT_DIR/config/customize.yaml #Customize.yaml isn't included in repo.
     - touch $CI_PROJECT_DIR/config/automations.yaml
+    - touch $CI_PROJECT_DIR/config/scripts.yaml
     - /usr/local/bin/python -m homeassistant --config $CI_PROJECT_DIR/config/ --script check_config
     - echo $?
