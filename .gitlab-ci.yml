@@ -1,10 +1,10 @@
 test:
   stage: test
   image: homeassistant/home-assistant
-
   script:
     - export PYTHONPATH=/usr/src/app #Use instead of CP
     - cp $CI_PROJECT_DIR/config/test_secrets.yaml $CI_PROJECT_DIR/config/secrets.yaml #Fake secrets because.
     - touch $CI_PROJECT_DIR/config/customize.yaml #Customize.yaml isn't included in repo.
+    - touch $CI_PROJECT_DIR/config/automations.yaml
     - /usr/local/bin/python -m homeassistant --config $CI_PROJECT_DIR/config/ --script check_config
     - echo $?
