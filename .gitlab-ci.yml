@@ -2,4 +2,4 @@ test:
   stage: test
   image: homeassistant/home-assistant
   script:
-    - hass --script check_config -c .
+    - hass --script check_config -c /config/configuration.yaml
