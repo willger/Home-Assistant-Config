@@ -1,5 +1,7 @@
 test:
   stage: test
   image: homeassistant/home-assistant
+
   script:
-    - hass --script check_config -c config/configuration.yaml
+    - python -m homeassistant --script check_config -c /builds/willger/Home-Assistant/config
+    - echo $?
