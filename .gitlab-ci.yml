@@ -3,5 +3,6 @@ test:
   image: homeassistant/home-assistant
 
   script:
-    - python -m homeassistant --script check_config -c /builds/willger/Home-Assistant/config
+    - cd /usr/src/app
+    - /usr/local/bin/python -m homeassistant --config /builds/willger/Home-Assistant/config --script check_config
     - echo $?
