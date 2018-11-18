@@ -1,5 +1,5 @@
 test:
   stage: test
-  image: homeassistant/amd64-homeassistant
+  image: homeassistant/home-assistant
   script:
     - hass --script check_config -c .
