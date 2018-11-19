@@ -8,6 +8,7 @@ Utility_Tab:
     - group.device_battery_level
     - group.speed_test
     - group.docker_containers
+    - sensor.gitlab_ci_status
     - group.home_utils
     - group.zwave_group
     - cover.garage_door
