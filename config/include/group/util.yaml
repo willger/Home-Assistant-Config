@@ -7,8 +7,7 @@ Utility_Tab:
     - group.hass_status
     - group.device_battery_level
     - group.speed_test
-    - group.docker_containers
-    - sensor.gitlab_ci_status
+    - group.cicd_status
     - group.home_utils
     - group.zwave_group
     - cover.garage_door
@@ -31,12 +30,12 @@ device_battery_level:
     - sensor.back_door_sensor_battery
     - sensor.patio_door_sensor_battery
     - sensor.garage_door_sensor_battery
-
-docker_containers:
-  name: 'Docker Containers'
+cicd_status:
+  name: 'CI/CD Status'
   icon: mdi:application
   entities:
     - sensor.hass_latest_docker
+    - sensor.gitlab_ci_status
 
 speed_test:
   name: 'Speed Test'
