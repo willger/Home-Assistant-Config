@@ -117,10 +117,6 @@ device_tracker:
 ifttt:
   key: !secret ifttt_key
 
-device_sun_light_trigger:
-  light_group: group.sunset_lights
-  device_group: group.all_devices
-
 weather:
 - platform: openweathermap
   api_key: !secret openweathermap_api_key
