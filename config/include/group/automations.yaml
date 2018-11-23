@@ -45,7 +45,6 @@ home_apps:
   entities:
     - group.hall_nl_app
     - group.basement_nl_app
-    - group.porch_lights_minder
     - group.outside_lights_minder
     - group.nest_automations
     - group.lamp_light_sync
