@@ -107,15 +107,20 @@ mqtt:
 influxdb:
   host: 127.0.0.1
 
-## Owntracks Device Trackers
+owntracks:
+  max_gps_accuracy: 200
+  waypoints: true
+  mqtt_topic: "owntracks/#"
+  events_only: false
+  waypoint_whitelist:
+    - ryan
+
 device_tracker:
-  - platform: owntracks
-    max_gps_accuracy: 200
   - platform: linksys_smart
     host: 192.168.1.1
     track_new_devices: false
     consider_home: 120
-    
+
 ifttt:
   key: !secret ifttt_key
 
