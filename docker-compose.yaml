@@ -1,41 +1,16 @@
-version: '2'
+version: '3'
 services:
-  mqtt:
-    container_name: mqtt
-    restart: unless-stopped
-    image: eclipse-mosquitto
-    volumes:
-      - /srv/mqtt/config:/mosquitto/config
-      - /var/log/mosquitto:/mosquitto/log
-      - /srv/mqtt/data:/mosquitto/data
-      - /etc/localtime:/etc/localtime:ro
-    ports:
-      - "1883:1883"
-      - "9001:9001"
-  postgres:
-    container_name: postgres
-    restart: unless-stopped
-    image: postgres
-    volumes:
-      - /srv/postgres:/var/lib/postgresql/data
-      - /etc/localtime:/etc/localtime:ro
-    ports:
-      - "5432:5432"
-    privileged: true
   homeassistant:
     container_name: hass
     restart: unless-stopped
-    image: homeassistant/home-assistant
-    depends_on:
-      - "mqtt"
-      - "postgres"
+    image: homeassistant/home-assistant:0.83.3
     devices:
       - /dev/ttyACM0:/dev/ttyACM0
     volumes:
       - /srv/Home-Assistant/config:/config
       - /etc/localtime:/etc/localtime:ro
     ports:
-      - 8123:8123
-      - 8060:8060
-    network_mode: host
+      - "8123:8123"
+      - "8060:8060"
     privileged: true
+    network_mode: host
