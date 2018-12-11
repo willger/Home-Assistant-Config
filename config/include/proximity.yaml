@@ -1,4 +1,5 @@
 home:
+  zone: home
   ignored_zones:
     - work
     - school
