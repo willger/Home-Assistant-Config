@@ -3,7 +3,7 @@ services:
   homeassistant:
     container_name: hass
     restart: unless-stopped
-    image: homeassistant/home-assistant:0.83.3
+    image: registry.gitlab.com/willger/home-assistant:0.84.1
     devices:
       - /dev/ttyACM0:/dev/ttyACM0
     volumes:
