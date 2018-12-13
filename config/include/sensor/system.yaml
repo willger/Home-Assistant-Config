@@ -12,7 +12,7 @@
 
 - platform: rest
   resource: https://s3.amazonaws.com/hassio-version/stable.json
-  name: Latest Version
+  name: Hass latest version
   value_template: "{{ value_json.homeassistant.default }}"
   scan_interval: 3600
     
