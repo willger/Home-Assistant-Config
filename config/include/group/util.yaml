@@ -31,10 +31,11 @@ device_battery_level:
     - sensor.patio_door_sensor_battery
     - sensor.garage_door_sensor_battery
 cicd_status:
-  name: 'CI/CD Status'
+  name: 'Repo Versions'
   icon: mdi:application
   entities:
     - sensor.hass_latest_docker
+    - sensor.hass_latest_version
     - sensor.gitlab_ci_status
 
 speed_test:
