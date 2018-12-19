@@ -61,19 +61,19 @@ google_assistant:
   entity_config: !include include/google_customize.yaml
 
 
-remote:
-  - platform: harmony
-    name: Living Room
-    host: 192.168.1.32
-    #00:04:20:F1:29:35
-  - platform: harmony
-    name: Family Room
-    host: 192.168.1.33
-    #00:04:20:F1:DB:12
-  - platform: harmony
-    name: Bedroom
-    host: 192.168.1.58
-    #C8:DB:26:01:B4:B0
+#remote:
+#  - platform: harmony
+#    name: Living Room
+#    host: 192.168.1.32
+#    #00:04:20:F1:29:35
+#  - platform: harmony
+#    name: Family Room
+#    host: 192.168.1.33
+#    #00:04:20:F1:DB:12
+#  - platform: harmony
+#    name: Bedroom
+#    host: 192.168.1.58
+#    #C8:DB:26:01:B4:B0
 
 media_player:
   - platform: roku
@@ -112,8 +112,6 @@ owntracks:
   waypoints: true
   mqtt_topic: "owntracks/#"
   events_only: false
-  waypoint_whitelist:
-    - ryan
 
 device_tracker:
   - platform: unifi
