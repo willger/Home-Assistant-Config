@@ -1,6 +1,6 @@
 test:
   stage: test
-  image: registry.gitlab.com/willger/home-assistant
+  image: registry.gitlab.com/willger/home-assistant:0.84.5
   script:
     - export PYTHONPATH=/usr/src/app #Use instead of CP
     - cp $CI_PROJECT_DIR/tests/test_secrets.yaml $CI_PROJECT_DIR/config/secrets.yaml #Fake secrets because.
