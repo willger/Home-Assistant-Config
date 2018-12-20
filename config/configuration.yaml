@@ -120,6 +120,9 @@ device_tracker:
     password: !secret unifi_password
     verify_ssl: false
     detection_time: 300
+    new_device_defaults:
+      track_new_devices: false
+      hide_if_away: false
 
 ifttt:
   key: !secret ifttt_key
