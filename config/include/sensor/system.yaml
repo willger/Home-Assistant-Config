@@ -25,6 +25,6 @@
   gitlab_id: !secret gitlab_ID
   token: !secret gitlab_token
 
-- platform: fedex
-  username: !secret fedex_un
-  password: !secret fedex_pw
+#- platform: fedex
+#  username: !secret fedex_un
+#  password: !secret fedex_pw
