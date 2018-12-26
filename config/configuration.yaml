@@ -135,7 +135,7 @@ weather:
 automation: !include automations.yaml
 automation old: !include_dir_merge_list include/automation
 binary_sensor: !include include/binary_sensor.yaml
-camera: !include include/camera.yaml
+#camera: !include include/camera.yaml
 cover: !include_dir_merge_list cover.yaml
 group: !include_dir_merge_named include/group
 input_select: !include include/input.yaml
