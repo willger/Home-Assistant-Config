@@ -10,4 +10,4 @@ test:
     - /usr/local/bin/python -m homeassistant --config $CI_PROJECT_DIR/config/ --script check_config
     - echo $?
   only:
-    - master
+    - non_existant_branch
