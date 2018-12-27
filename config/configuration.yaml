@@ -104,8 +104,8 @@ mqtt:
   client_id: hass
   password: !secret mqtt_password
 
-influxdb:
-  host: 127.0.0.1
+#influxdb:
+#  host: 127.0.0.1
 
 owntracks:
   max_gps_accuracy: 200
