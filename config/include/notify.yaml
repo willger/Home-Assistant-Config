@@ -6,3 +6,8 @@
   - platform: nfandroidtv
     name: fireTV
     host: !secret firetv_ip
+
+- platform: html5
+    name: html5
+    gcm_api_key: !secret gcm_api_key
+    gcm_sender_id: !secret gcm_sender_id
