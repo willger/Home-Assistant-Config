@@ -7,6 +7,7 @@ default_view:
   entities:
     - persistent_notification.httplogin
     - group.humans
+    - group.robots
     - group.living_room
     - group.kitchen_dining
     - group.upstairs
@@ -23,6 +24,12 @@ humans:
   entities:
     - device_tracker.ryan_phone
     - device_tracker.beth_phone
+    
+robots:
+  name: 'Robots'
+  control: hidden
+  entities:
+    - device_tracker.rosie
 
 home_state_view:
   name: 'Home State'
