@@ -142,6 +142,7 @@ input_select: !include include/input.yaml
 light: !include include/light.yaml
 notify: !include include/notify.yaml
 #proximity: !include include/proximity.yaml
+rest_command: !include include/rest.yaml
 scene: !include_dir_merge_list include/scene
 sensor: !include_dir_merge_list include/sensor
 script: !include scripts.yaml
