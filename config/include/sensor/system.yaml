@@ -31,10 +31,10 @@
   port: 3493
   username: !secret nut_server_un
   password: !secret nut_server_pw
-    resources:
-      - battery.charge
-      - battery.voltage
-      - input.voltage
-      - ups.load
-      - ups.timer.reboot
-      - ups.timer.shutdown
+  resources:
+    - battery.charge
+    - battery.voltage
+    - input.voltage
+    - ups.load
+    - ups.timer.reboot
+    - ups.timer.shutdown
