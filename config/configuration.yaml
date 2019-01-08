@@ -127,6 +127,11 @@ device_tracker:
 ifttt:
   key: !secret ifttt_key
 
+vacuum:
+  - platform: xiaomi_miio
+    host: !secret vac_host
+    token: !secret vac_token
+
 weather:
 - platform: openweathermap
   api_key: !secret openweathermap_api_key
