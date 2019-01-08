@@ -25,6 +25,16 @@
   gitlab_id: !secret gitlab_ID
   token: !secret gitlab_token
 
-#- platform: fedex
-#  username: !secret fedex_un
-#  password: !secret fedex_pw
+- platform: nut
+  name: UPS
+  host: !secret nut_server_ip
+  port: 3493
+  username: !secret nut_server_un
+  password: !secret nut_server_pw
+    resources:
+      - battery.charge
+      - battery.voltage
+      - input.voltage
+      - ups.load
+      - ups.timer.reboot
+      - ups.timer.shutdown
