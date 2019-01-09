@@ -35,6 +35,7 @@ cicd_status:
   icon: mdi:application
   entities:
     - sensor.hass_latest_docker
+    - sensor.hass_personal_latest_docker
     - sensor.hass_latest_version
     - sensor.gitlab_ci_status
 
