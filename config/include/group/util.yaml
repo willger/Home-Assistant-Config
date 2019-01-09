@@ -8,6 +8,7 @@ Utility_Tab:
     - group.device_battery_level
     - group.speed_test
     - group.cicd_status
+    - group.upc_battery
     - group.home_utils
     - group.zwave_group
     - cover.garage_door
@@ -46,6 +47,17 @@ speed_test:
     - sensor.speedtest_ping
     - sensor.speedtest_download
     - sensor.speedtest_upload
+    
+upc_battery:
+  name: 'UPC System'
+  icon: mdi:battery
+  entities:
+    - sensor.ups_battery_charge
+    - sensor.ups_battery_voltage
+    - sensor.ups_input_voltage
+    - sensor.ups_load
+    - sensor.ups_load_reboot_timer
+    - sensor.ups_load_shutdown_timer
 
 home_utils:
   name: 'Home Utilities'
