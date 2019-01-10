@@ -9,12 +9,11 @@
     - ping
     - download
     - upload
-
-- platform: rest
-  resource: https://s3.amazonaws.com/hassio-version/stable.json
+  
+- platform: command_line
   name: Hass latest version
-  value_template: "{{ value_json.homeassistant.default }}"
-  scan_interval: 3600
+  command: >-
+    curl -sS "https://api.github.com/repos/home-assistant/home-assistant/releases/latest" | grep -o '"name": "[0-9][^"]*"' | sort -r | sed -e 's/[^0-9.b]//g' | grep -v [b] | head -1
     
 - platform: command_line
   name: Hass Latest Docker
