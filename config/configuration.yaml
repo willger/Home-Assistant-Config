@@ -1,4 +1,5 @@
 homeassistant:
+  api_password: !secret hass_api_pw
   name: 'home'
   latitude: !secret home_latitude
   longitude: !secret home_longitude
