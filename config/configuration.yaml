@@ -1,5 +1,4 @@
 homeassistant:
-  api_password: !secret hass_api_pw
   name: 'home'
   latitude: !secret home_latitude
   longitude: !secret home_longitude
@@ -26,7 +25,7 @@ frontend:
   javascript_version: latest
 
 http:
-  api_password: !secret api_password
+  api_password: !secret hass_api_pw
   base_url: !secret home_url
   use_x_forwarded_for: True
   trusted_proxies:
@@ -75,7 +74,7 @@ media_player:
   - platform: roku
 
 emulated_roku:
-  host_ip: !secret hass_ip
+  host_ip: localhost
   upnp_bind_multicast: True
   listen_ports: 8060
 
