@@ -2,7 +2,7 @@
   entities:
     group.living_room_lights:
       state: off
-    light.cabinet_lights:
+    switch.cabinet_switch:
       state: off
     light.bedroom:
       state: off
