@@ -6,7 +6,5 @@
       state: off
     light.bedroom:
       state: off
-    light.office_lamp:
-      state: off
     group.basement_lights:
       state: off
