@@ -36,6 +36,19 @@
           service: input_select.select_previous
           entity_id: input_select.home_presence
 
+# Cabinet lights: Controlled by GE switch only. 
+      skylight:
+        friendly_name: "Cabinet Switch"
+        value_template: "{{ is_state('switch.ge_toggle_switch', 'on') }}"
+        turn_on:
+          service: switch.turn_on
+          data:
+            entity_id: light.cabinet_lights
+        turn_off:
+          service: switch.turn_off
+          data:
+            entity_id: light.cabinet_lights
+
 #  - platform: tplink
 #    name: TP-Link Switch
 #    host: 192.168.1.118
