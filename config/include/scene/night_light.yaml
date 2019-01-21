@@ -16,6 +16,6 @@
     light.basement_lamp:
       state: on
       brightness: 50
-    light.badger_lamp:
+    light.corner_light:
       state: on
       brightness: 50
