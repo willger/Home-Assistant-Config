@@ -120,6 +120,16 @@ device_tracker:
       track_new_devices: false
       hide_if_away: false
 
+input_number:
+  humans:
+    name: Humans
+    initial: 1
+    min: 0
+    max: 3
+    step: 1
+    mode: slider
+    unit_of_measurement: Humans
+
 ifttt:
   key: !secret ifttt_key
 
