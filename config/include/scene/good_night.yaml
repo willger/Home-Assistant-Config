@@ -4,11 +4,9 @@
       state: off
     light.bedroom:
       state: on
-    light.office_lamp:
-      state: off
     group.basement_lights:
       state: off
-    light.cabinet_lights:
+    switch.cabinet_switch:
       state: off
     light.dining_room_light:
       state: off
