@@ -6,7 +6,6 @@
       kelvin: 3500
     light.cabinet_lights:
       state: on
-      brightness: 100
 
 - name: basement_nl_scene
   entities:
