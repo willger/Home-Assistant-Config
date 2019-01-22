@@ -3,10 +3,14 @@
     light.living_room:
       state: on
       brightness: 50
-      kelvin: 3500
-    light.cabinet_lights:
+    switch.cabinet_lights:
       state: on
-
+- name: hall_nl_off_scene
+  entities:
+    light.living_room:
+      state: off
+    switch.cabinet_lights:
+      state: off
 - name: basement_nl_scene
   entities:
     light.basement_entry:
@@ -18,3 +22,11 @@
     light.corner_light:
       state: on
       brightness: 50
+- name: basement_nl_off_scene
+  entities:
+    light.basement_entry:
+      state: off
+    light.basement_lamp:
+      state: off
+    light.corner_light:
+      state: off
