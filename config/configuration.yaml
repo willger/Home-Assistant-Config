@@ -129,6 +129,14 @@ input_number:
     step: 1
     mode: slider
     unit_of_measurement: Humans
+    
+input_boolean:
+  basement_nl:
+    name: Basement NL
+  hall_nl:
+    name: Hall NL
+  guest_mode:
+    name: Guest Mode
 
 ifttt:
   key: !secret ifttt_key
