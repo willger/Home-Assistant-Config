@@ -4,11 +4,12 @@
         value_template: "{{ is_state('switch.ge_toggle_switch', 'on') }}"
         turn_on:
           service: switch.turn_on
-          entity_id: switch.ge_toggle_switch
+          data:
+            entity_id: switch.ge_toggle_switch
         turn_off:
           service: switch.turn_off
-          entity_id: switch.ge_toggle_switch
-
+          data:
+            entity_id: switch.ge_toggle_switch
 #  - platform: tplink
 #    name: TP-Link Switch
 #    host: 192.168.1.118
