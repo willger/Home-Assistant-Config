@@ -116,6 +116,12 @@ device_tracker:
     password: !secret unifi_password
     verify_ssl: false
     detection_time: 300
+    monitored_conditions:
+      - first_seen
+      - idletime
+      - ip
+      - last_seen
+      - latest_assoc_time
     new_device_defaults:
       track_new_devices: false
       hide_if_away: false
