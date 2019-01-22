@@ -123,7 +123,6 @@ device_tracker:
 input_number:
   humans:
     name: Humans
-    initial: 1
     min: 0
     max: 3
     step: 1
