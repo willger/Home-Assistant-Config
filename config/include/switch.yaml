@@ -1,4 +1,6 @@
-# Cabinet lights: Controlled by GE switch only. 
+# Cabinet lights: Controlled by GE switch only.
+  - platform: template
+    switches:
       cabinet_switch:
         friendly_name: "Cabinet Switch"
         value_template: "{{ is_state('switch.ge_toggle_switch', 'on') }}"
