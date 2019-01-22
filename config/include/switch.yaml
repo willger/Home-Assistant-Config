@@ -4,37 +4,35 @@
     switches:
       hall_nl:
         friendly_name: 'Hall NL'
-        value_template: '{{ is_state("group.hall_nl_app", "on") }}'
+        value_template: '{{ is_state("input_boolean.hall_nl", "on") }}'
         turn_on:
-          service: homeassistant.turn_on
-          entity_id: group.hall_nl_app
+          service: input_boolean.turn_on
+          entity_id: input_boolean.hall_nl
         turn_off:
-          service: homeassistant.turn_off
-          entity_id: group.hall_nl_app
+          service: input_boolean.turn_off
+          entity_id: input_boolean.hall_nl
   # Basement NL Simulated switch
   # Ties the Basement NL automations to one switch.
       basement_nl:
         friendly_name: 'Basement NL'
-        value_template: '{{ is_state("group.basement_nl_app", "on") }}'
+        value_template: '{{ is_state("input_boolean.basement_nl", "on") }}'
         turn_on:
-          service: homeassistant.turn_on
-          entity_id: group.basement_nl_app
+          service: input_boolean.turn_on
+          entity_id: input_boolean.basement_nl
         turn_off:
-          service: homeassistant.turn_off
-          entity_id: group.basement_nl_app
+          service: input_boolean.turn_off
+          entity_id: input_boolean.basement_nl
           
   # Guest Mode switch. Used overide functions of the home/away presence detection for when guests are over. 
       guest_mode_switch:
         friendly_name: 'Guest Mode'
-        value_template: "{{ is_state_attr('switch.guest_mode_switch', 'icon', 'mdi:account-off-outline') }}"
+        value_template: '{{ is_state("input_boolean.guest_mode", "on") }}'
         turn_on:
-          service: input_number.increment
-          data:
-            entity_id: input_number.humans
+          service: input_boolean.turn_on
+          entity_id: input_boolean.guest_mode
         turn_off:
-          service: input_number.decrement
-          data:
-            entity_id: input_number.humans
+          service: input_boolean.turn_off
+          entity_id: input_boolean.guest_mode
 
 # Cabinet lights: Controlled by GE switch only. 
       cabinet_switch:
