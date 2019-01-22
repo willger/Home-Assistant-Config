@@ -26,15 +26,15 @@
   # Guest Mode switch. Used overide functions of the home/away presence detection for when guests are over. 
       guest_mode_switch:
         friendly_name: 'Guest Mode'
-        value_template: '{{ is_state("input_select.home_presence", "Guest") }}'
+        value_template: '{{ is_state_attr('switch.guest_mode_switch', 'icon', 'mdi:account-off-outline') }}'
         turn_on:
-          service: input_select.select_option
+          service: input_number.increment
           data:
-            entity_id: "input_select.home_presence"
-            option: "Guest"
+            entity_id: input_number.humans
         turn_off:
-          service: input_select.select_previous
-          entity_id: input_select.home_presence
+          service: input_number.decrement
+          data:
+            entity_id: input_number.humans
 
 # Cabinet lights: Controlled by GE switch only. 
       cabinet_switch:
