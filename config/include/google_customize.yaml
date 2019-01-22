@@ -1,8 +1,6 @@
 switch.porch_lights_switch:
   expose: true
   name: 'Porch Lights'
-light.cabinet_lights:
-  expose: true
 light.basement_entry:
   expose: true
 light.bedroom_lamp:
@@ -20,21 +18,18 @@ light.basement_lamp:
 light.bar_lights:
   expose: true
   name: 'Bar Lights'
-light.office_lamp:
+light.corner_light:
   expose: true
-  name: 'Office Lamp'
+  name: 'Corner Light'
 switch.aeotec_relay_dining_room_light:
   expose: true
   name: 'Dining Room Light'
 switch.aeotec_relay_kitchen_light:
   expose: true
   name: 'Kitchen Light'
-switch.basement_nl:
-  expose: true
-  name: 'Basement NL'
-switch.hall_nl:
-  expose: true
-  name: 'Hall NL'
 switch.garage_door_opener:
   expose: true
   name: 'Garage Door'
+switch.cabinet_switch:
+  expose: true
+  name: 'Cabinet Lights'
