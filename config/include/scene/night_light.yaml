@@ -1,14 +1,21 @@
 - name: hall_nl_scene
   entities:
-    light.living_room:
+    light.right_lamp:
+      state: on
+      brightness: 50
+    light.left_lamp:
       state: on
       brightness: 50
     switch.cabinet_lights:
       state: on
 - name: hall_nl_off_scene
   entities:
-    light.living_room:
+    light.right_lamp:
       state: off
+      brightness: 50
+    light.left_lamp:
+      state: off
+      brightness: 50
     switch.cabinet_lights:
       state: off
 - name: basement_nl_scene
