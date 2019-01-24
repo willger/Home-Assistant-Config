@@ -1,3 +1,6 @@
 trigger_build:
   url: !secret url_trigger_build
   method: POST
+trigger_config_update:
+  url: !secret url_trigger_config_update
+  method: POST
