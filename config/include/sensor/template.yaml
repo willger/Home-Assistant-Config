@@ -6,13 +6,13 @@
     home_count:
       friendly_name: "Home Count"
       value_template: >-
-      {%- if (states("device_tracker.ryan_phone")!="home" and states("device_tracker.beth_phone")!="home") -%}
+        {% if (states("device_tracker.ryan_phone")!="home" and states("device_tracker.beth_phone")!="home") %}
         0
-      {%- elif (states("device_tracker.ryan_phone")=="home" and states("device_tracker.beth_phone")=="home") -%}
+        {% elif (states("device_tracker.ryan_phone")=="home" and states("device_tracker.beth_phone")=="home") %}
         2
-      {%- elif (states("device_tracker.ryan_phone")=="home" or states("device_tracker.beth_phone")=="home") -%}
+        {% elif (states("device_tracker.ryan_phone")=="home" or states("device_tracker.beth_phone")=="home") %}
         1
-      {%- endif %}
+        {% endif %}
     thermostat_upstairs_away_mode:
       value_template: '{{ states.climate.upstairs.attributes.away_mode }}'
       friendly_name: 'Nest Away Mode'
