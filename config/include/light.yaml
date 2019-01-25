@@ -1,7 +1,8 @@
+## Cabinet Lights
 - platform: flux_led
-   # CABINET LIGHTS
     devices:
       192.168.1.131:
         name: 'cabinet lights'
         mode: "rgbw"
         protocol: 'ledenet'
+
