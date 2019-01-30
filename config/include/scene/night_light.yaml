@@ -6,7 +6,7 @@
     light.left_lamp:
       state: on
       brightness: 50
-    switch.cabinet_lights:
+    switch.cabinet_switch:
       state: on
 - name: hall_nl_off_scene
   entities:
@@ -16,7 +16,7 @@
     light.left_lamp:
       state: off
       brightness: 50
-    switch.cabinet_lights:
+    switch.cabinet_switch:
       state: off
 - name: basement_nl_scene
   entities:
