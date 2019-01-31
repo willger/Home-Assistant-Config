@@ -12,10 +12,8 @@
   entities:
     light.right_lamp:
       state: off
-      brightness: 50
     light.left_lamp:
       state: off
-      brightness: 50
     switch.cabinet_switch:
       state: off
 - name: basement_nl_scene
