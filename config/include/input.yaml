@@ -4,5 +4,4 @@ home_presence :
    - Home
    - Away
    - Guest
-  initial: Home
   icon: mdi:home-map-marker
