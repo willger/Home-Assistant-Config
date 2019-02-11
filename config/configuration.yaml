@@ -11,6 +11,7 @@ homeassistant:
    - type: homeassistant
 
 auth:
+system_health:
 config:
 map:
 conversation:
