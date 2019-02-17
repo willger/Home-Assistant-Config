@@ -55,6 +55,9 @@ google_assistant:
   project_id: !secret goog_project_id
   api_key: !secret goog_api_key
   expose_by_default: false
+  exposed_domains:
+    - switch
+    - light
   entity_config: !include include/google_customize.yaml
 
 media_player:
