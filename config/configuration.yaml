@@ -134,6 +134,14 @@ input_boolean:
 
 ifttt:
   key: !secret ifttt_key
+  
+speedtestdotnet:
+  scan_interval:
+    minutes: 120
+  monitored_conditions:
+    - ping
+    - download
+    - upload
 
 vacuum:
   - platform: xiaomi_miio
