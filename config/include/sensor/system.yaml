@@ -1,15 +1,3 @@
-- platform: speedtest
-  minute: 30
-  hour:
-    - 0
-    - 6
-    - 12
-    - 18
-  monitored_conditions:
-    - ping
-    - download
-    - upload
-  
 - platform: command_line
   name: Hass Latest Docker
   command: "curl -sS "https://registry.hub.docker.com/v2/repositories/homeassistant/home-assistant/tags/" | grep -o '"name": "[0-9][^"]*"' | sort -r | sed -e 's/[^0-9.b]//g' | grep -v [b] | head -1"
