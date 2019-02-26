@@ -1,17 +1,3 @@
-- platform: command_line
-  name: Hass Latest Docker
-  command: "curl -sS "https://registry.hub.docker.com/v2/repositories/homeassistant/home-assistant/tags/" | grep -o '"name": "[0-9][^"]*"' | sort -r | sed -e 's/[^0-9.b]//g' | grep -v [b] | head -1"
-  scan_interval: 1800
-  
-- platform: command_line
-  name: Hass Personal Latest Docker
-  command: "curl -sS "https://registry.hub.docker.com/v2/repositories/willger/home-assistant/tags/" | grep -o '"name": "[0-9][^"]*"' | sort -r | sed -e 's/[^0-9.b]//g' | grep -v [b] | head -1"
-  scan_interval: 1800
-
-- platform: gitlab_ci
-  gitlab_id: !secret gitlab_ID
-  token: !secret gitlab_token
-
 - platform: nut
   name: UPS
   host: !secret nut_server_ip
