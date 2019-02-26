@@ -22,82 +22,9 @@ history:
 #discovery:
 media_extractor:
 
-frontend:
-  javascript_version: latest
-
-http:
-  api_password: !secret hass_api_pw
-  base_url: !secret home_url
-  use_x_forwarded_for: True
-  trusted_proxies:
-    - 127.0.0.1
-  trusted_networks: !secret trusted_ip
-  ip_ban_enabled: True
-  login_attempts_threshold: 3
-
-duckdns:
-  domain: !secret dns_domain
-  access_token: !secret dns_token
-
-recorder:
-  db_url: !secret db_url
-  purge_keep_days: 7
-  purge_interval: 1
- 
-tts:
-  - platform: google
-    cache: true
-    language: 'en'
-    cache_dir: /tmp/tts
-    time_memory: 300
-
-google_assistant:
-  project_id: !secret goog_project_id
-  api_key: !secret goog_api_key
-  expose_by_default: false
-  exposed_domains:
-    - switch
-    - light
-  entity_config: !include include/google_customize.yaml
-
-media_player:
-  - platform: roku
-
-emulated_roku:
-  host_ip: localhost
-  upnp_bind_multicast: True
-  listen_ports: 8060
-
-nest:
-  client_id: !secret nest_client_id
-  client_secret: !secret nest_client_secret
-
 climate:
   platform: nest
-
-zwave:
-  usb_path: /dev/ttyACM0
-  network_key: !secret zwave_network_key
-  autoheal: true
-  polling_interval: 60000
-  debug: false
-
-mqtt:
-  broker: 127.0.0.1
-  port: 1883
-  username: !secret mqtt_username
-  client_id: hass
-  password: !secret mqtt_password
-
-#influxdb:
-#  host: 127.0.0.1
-
-owntracks:
-  max_gps_accuracy: 200
-  waypoints: true
-  mqtt_topic: "owntracks/#"
-  events_only: false
-
+  
 device_tracker:
   - platform: unifi
     host: !secret unifi_controller
@@ -114,6 +41,43 @@ device_tracker:
     new_device_defaults:
       track_new_devices: false
       hide_if_away: false
+
+duckdns:
+  domain: !secret dns_domain
+  access_token: !secret dns_token
+
+emulated_roku:
+  host_ip: localhost
+  upnp_bind_multicast: True
+  listen_ports: 8060
+  
+frontend:
+  javascript_version: latest
+
+google_assistant:
+  project_id: !secret goog_project_id
+  api_key: !secret goog_api_key
+  expose_by_default: false
+  exposed_domains:
+    - switch
+    - light
+  entity_config: !include include/google_customize.yaml
+
+http:
+  api_password: !secret hass_api_pw
+  base_url: !secret home_url
+  use_x_forwarded_for: True
+  trusted_proxies:
+    - 127.0.0.1
+  trusted_networks: !secret trusted_ip
+  ip_ban_enabled: True
+  login_attempts_threshold: 3
+
+ifttt:
+  key: !secret ifttt_key
+  
+#influxdb:
+#  host: 127.0.0.1
 
 input_number:
   humans:
@@ -132,9 +96,41 @@ input_boolean:
   guest_mode:
     name: Guest Mode
 
-ifttt:
-  key: !secret ifttt_key
-  
+media_player:
+  - platform: roku
+mqtt:
+  broker: 127.0.0.1
+  port: 1883
+  username: !secret mqtt_username
+  client_id: hass
+  password: !secret mqtt_password
+
+nest:
+  client_id: !secret nest_client_id
+  client_secret: !secret nest_client_secret
+
+owntracks:
+  max_gps_accuracy: 200
+  waypoints: true
+  mqtt_topic: "owntracks/#"
+  events_only: false
+
+recorder:
+  db_url: !secret db_url
+  purge_keep_days: 7
+  purge_interval: 1
+
+remote:
+  - platform: harmony
+    name: Living Room
+    host: 192.168.1.100
+  - platform: harmony
+    name: Family Room
+    host: 192.168.1.99
+  - platform: harmony
+    name: Bedroom
+    host: 192.168.1.98
+
 speedtestdotnet:
   scan_interval:
     minutes: 120
@@ -142,6 +138,13 @@ speedtestdotnet:
     - ping
     - download
     - upload
+
+tts:
+  - platform: google
+    cache: true
+    language: 'en'
+    cache_dir: /tmp/tts
+    time_memory: 300
 
 vacuum:
   - platform: xiaomi_miio
@@ -152,7 +155,13 @@ weather:
 - platform: openweathermap
   api_key: !secret openweathermap_api_key
 
-
+zwave:
+  usb_path: /dev/ttyACM0
+  network_key: !secret zwave_network_key
+  autoheal: true
+  polling_interval: 60000
+  debug: false
+  
 automation: !include automations.yaml
 automation old: !include_dir_merge_list include/automation
 binary_sensor: !include include/binary_sensor.yaml
