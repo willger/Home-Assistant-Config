@@ -21,9 +21,6 @@ sun:
 history:
 #discovery:
 media_extractor:
-
-climate:
-  platform: nest
   
 device_tracker:
   - platform: unifi
@@ -108,6 +105,7 @@ mqtt:
 nest:
   client_id: !secret nest_client_id
   client_secret: !secret nest_client_secret
+
 
 owntracks:
   max_gps_accuracy: 200
