@@ -15,10 +15,8 @@ light.ryans_lamp:
   expose: true
 light.addys_lamp:
   expose: true
-  name: "Addy's Lamp"
 light.sophies_lamp:
   expose: true
-  name: "Sophie's Lamp"
 light.basement_lamp:
   expose: true
 light.bar_lights:
