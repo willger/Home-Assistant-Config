@@ -11,3 +11,8 @@
     - ups.load
     - ups.timer.reboot
     - ups.timer.shutdown
+    
+- platform: github
+    access_token: !secret github_access_token
+    repositories:
+      - path: 'home-assistant/home-assistant'
