@@ -12,9 +12,10 @@
     - ups.timer.reboot
     - ups.timer.shutdown
     
-- platform: github
-  access_token: !secret github_access_token
-  repositories:
-    - path: 'home-assistant/home-assistant'
+- platform: rest
+  resource: https://pypi.python.org/pypi/homeassistant/json
+  name: HA upstream
+  value_template: '{{ value_json.info.version }}'
+  scan_interval: 3600
 
 - platform: version
