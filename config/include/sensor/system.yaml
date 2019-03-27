@@ -13,9 +13,14 @@
     - ups.timer.shutdown
     
 - platform: rest
-  resource: https://pypi.python.org/pypi/homeassistant/json
+  resource: https://api.github.com/repos/home-assistant/home-assistant/releases/latest
   name: HA upstream
-  value_template: '{{ value_json.info.version }}'
+  value_template: '{{ value_json.name }}'
+  scan_interval: 3600
+- platform: rest
+  resource: https://api.github.com/repos/home-assistant/home-assistant/releases/latest
+  name: HA upstream type
+  value_template: '{{ value_json.prerelease }}'
   scan_interval: 3600
 
 - platform: version
