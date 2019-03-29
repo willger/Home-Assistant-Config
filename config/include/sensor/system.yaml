@@ -14,13 +14,16 @@
     
 - platform: rest
   resource: https://api.github.com/repos/home-assistant/home-assistant/releases/latest
-  name: HA upstream
-  value_template: "{{ value_json['name'] }}"
-  scan_interval: 3600
+  value_template: '{{ value_json.tag_name }}'
+  headers:
+    Accept: application/vnd.github.v3+json
+    Content-Type: application/json
+    User-Agent: Home Assistant REST sensor
+    
 - platform: rest
   resource: https://api.github.com/repos/home-assistant/home-assistant/releases/latest
   name: HA upstream type
-  value_template: "{{ value_json['prerelease'] }}"
+  value_template: '{{ value_json["prerelease"] }}'
   scan_interval: 3600
 
 - platform: version
