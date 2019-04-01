@@ -13,6 +13,7 @@
     - ups.timer.shutdown
     
 - platform: rest
+  name: HA Upstream
   resource: https://api.github.com/repos/home-assistant/home-assistant/releases/latest
   value_template: '{{ value_json.tag_name }}'
   headers:
