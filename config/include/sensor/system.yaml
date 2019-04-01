@@ -20,11 +20,32 @@
     Accept: application/vnd.github.v3+json
     Content-Type: application/json
     User-Agent: Home Assistant REST sensor
+  scan_interval: 3600
     
 - platform: rest
-  resource: https://api.github.com/repos/home-assistant/home-assistant/releases/latest
   name: HA upstream type
-  value_template: '{{ value_json["prerelease"] }}'
+  resource: https://api.github.com/repos/home-assistant/home-assistant/releases/latest
+  value_template: '{{ value_json.prerelease }}'
+  headers:
+    Accept: application/vnd.github.v3+json
+    Content-Type: application/json
+    User-Agent: Home Assistant REST sensor
   scan_interval: 3600
+  
+- platform: rest
+  name: Upstream Sensor
+  json_attributes:
+    - published_at
+    - prerelease
+  resource: https://api.github.com/repos/home-assistant/home-assistant/releases/latest
+  value_template: '{{ value_json.tag_name }}'
+- platform: template
+  sensors:
+    published_at:
+      friendly_name: 'Publish Time'
+      value_template: '{{ states.sensor.upstream_sensor.attributes["published_at"] }}'
+    milliseconds:
+      friendly_name: 'prerelease'
+      value_template: '{{ states.sensor.upstream_sensor.attributes["prerelease"] }}'
 
 - platform: version
