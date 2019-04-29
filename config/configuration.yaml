@@ -146,6 +146,10 @@ speedtestdotnet:
     - ping
     - download
     - upload
+    
+tesla:
+  username: tesla_un
+  password: tesla_pw
 
 tts:
   - platform: google
