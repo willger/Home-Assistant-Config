@@ -148,8 +148,8 @@ speedtestdotnet:
     - upload
     
 tesla:
-  username: tesla_un
-  password: tesla_pw
+  username: !secret tesla_un
+  password: !secret tesla_pw
 
 tts:
   - platform: google
