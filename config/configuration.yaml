@@ -150,6 +150,7 @@ speedtestdotnet:
 tesla:
   username: !secret tesla_un
   password: !secret tesla_pw
+  scan_interval: 600
 
 tts:
   - platform: google
