@@ -48,11 +48,6 @@ device_tracker:
 duckdns:
   domain: !secret dns_domain
   access_token: !secret dns_token
-
-emulated_roku:
-  host_ip: localhost
-  upnp_bind_multicast: True
-  listen_ports: 8060
   
 frontend:
   javascript_version: latest
