@@ -24,8 +24,8 @@ media_extractor:
 
 climate:
   - platform: honeywell
-    username: HW_UN
-    password: HW_PW
+    username: !secret HW_UN
+    password: !secret HW_PW
     scan_interval: 600
   
 device_tracker:
