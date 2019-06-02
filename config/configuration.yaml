@@ -21,6 +21,12 @@ sun:
 history:
 #discovery:
 media_extractor:
+
+climate:
+  - platform: honeywell
+    username: HW_UN
+    password: HW_PW
+    scan_interval: 600
   
 device_tracker:
   - platform: unifi
@@ -107,11 +113,6 @@ nest:
   client_secret: !secret nest_client_secret
   sensors:
     monitored_conditions:
-      - 'temperature'
-      - 'target'
-      - 'humidity'
-      - 'operation_mode'
-      - 'hvac_state'
       - 'co_status'
       - 'smoke_status'
       - 'battery_health'
