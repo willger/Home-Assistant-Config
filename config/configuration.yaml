@@ -148,12 +148,9 @@ tesla:
   password: !secret tesla_pw
   scan_interval: 600
 
+
 tts:
-  - platform: google
-    cache: true
-    language: 'en'
-    cache_dir: /tmp/tts
-    time_memory: 300
+  - platform: google_translate
 
 vacuum:
   - platform: xiaomi_miio
