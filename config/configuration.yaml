@@ -27,6 +27,7 @@ climate:
     username: !secret HW_UN
     password: !secret HW_PW
     scan_interval: 600
+    region: us
   
 device_tracker:
   - platform: unifi
